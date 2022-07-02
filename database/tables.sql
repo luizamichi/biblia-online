@@ -1,0 +1,79 @@
+CREATE DATABASE IF NOT EXISTS `biblia` CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
+USE `biblia`;
+SET CHARACTER_SET_CLIENT=utf8mb4;
+
+-- TABELA TESTAMENTOS (2)
+DROP TABLE IF EXISTS `testamentos`;
+CREATE TABLE `testamentos` (
+	`testamento_id` TINYINT(1) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'TABELA DE TESTAMENTOS', -- INT/PK (CHAVE)
+	`testamento_nome` VARCHAR(32) NOT NULL COMMENT 'NOME DO TESTAMENTO', -- STR (NOME)
+	`testamento_abreviado` CHAR(2) NOT NULL COMMENT 'SIGLA ABREVIADA DO TESTAMENTO', -- STR (ABREVIAÇÃO)
+	PRIMARY KEY (`testamento_id`),
+	UNIQUE KEY (`testamento_nome`),
+	UNIQUE KEY (`testamento_abreviado`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- TABELA AUTORES (40)
+DROP TABLE IF EXISTS `autores`;
+CREATE TABLE `autores` (
+	`autor_id` TINYINT(2) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'TABELA DE AUTORES', -- INT/PK (CHAVE)
+	`autor_nome` VARCHAR(32) NOT NULL COMMENT 'NOME DO AUTOR', -- STR (NOME)
+	`autor_apelido` VARCHAR(16) NOT NULL COMMENT 'APELIDO DO AUTOR', -- STR (APELIDO)
+	`autor_sobre` TEXT NULL COMMENT 'TEXTO SOBRE O AUTOR', -- STR (SOBRE)
+	PRIMARY KEY (`autor_id`),
+	UNIQUE KEY (`autor_apelido`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- TABELA LIVROS (66)
+DROP TABLE IF EXISTS `livros`;
+CREATE TABLE `livros` (
+	`livro_id` TINYINT(2) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'TABELA DE LIVROS', -- INT/PK (CHAVE)
+	`livro_testamento_id` TINYINT(1) UNSIGNED NOT NULL COMMENT 'FK DA TABELA DE TESTAMENTOS', -- INT/FK (CHAVE TESTAMENTO)
+	`livro_nome` VARCHAR(32) NOT NULL COMMENT 'NOME DO LIVRO', -- STR (NOME)
+	`livro_abreviado` VARCHAR(4) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'SIGLA ABREVIADA DO LIVRO', -- STR (ABREVIAÇÃO)
+	`livro_posicao` TINYINT(2) UNSIGNED NOT NULL COMMENT 'POSIÇÃO DO LIVRO NO TESTAMENTO', -- INT (POSIÇÃO)
+	`livro_sobre` TEXT NULL COMMENT 'TEXTO SOBRE O LIVRO', -- STR (SOBRE)
+	`livro_capitulos` TINYINT(2) UNSIGNED NOT NULL COMMENT 'QUANTIDADE DE CAPÍTULOS DO LIVRO', -- INT (CAPÍTULOS)
+	PRIMARY KEY (`livro_id`),
+	UNIQUE KEY `livro_testamento_posicao` (`livro_testamento_id`, `livro_posicao`),
+	UNIQUE KEY (`livro_abreviado`),
+	FOREIGN KEY (`livro_testamento_id`) REFERENCES `testamentos` (`testamento_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- VETOR AUTORES X LIVROS (87) N-N
+DROP TABLE IF EXISTS `autores_livros`;
+CREATE TABLE `autores_livros` (
+	`autores_livros_id` TINYINT(2) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'TABELA (VETOR) DE AUTORES/LIVROS', -- INT/PK (CHAVE)
+	`autores_livros_autor_id` TINYINT(2) UNSIGNED NOT NULL COMMENT 'FK DA TABELA DE AUTORES', -- INT/FK (CHAVE AUTOR)
+	`autores_livros_livro_id` TINYINT(2) UNSIGNED NOT NULL COMMENT 'FK DA TABELA DE LIVROS', -- INT/FK (CHAVE LIVRO)
+	`autores_livros_exatidao` TINYINT(2) UNSIGNED NOT NULL COMMENT 'PORCENTAGEM DE EXATIDÃO DA AUTORIA DO LIVRO', -- INT (EXATIDÃO)
+	PRIMARY KEY (`autores_livros_id`),
+	FOREIGN KEY (`autores_livros_autor_id`) REFERENCES `autores` (`autor_id`),
+	FOREIGN KEY (`autores_livros_livro_id`) REFERENCES `livros` (`livro_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- TABELA VERSÕES (13)
+DROP TABLE IF EXISTS `versoes`;
+CREATE TABLE `versoes` (
+	`versao_id` TINYINT(2) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'TABELA DE VERSÕES', -- INT/PK (CHAVE)
+	`versao_nome` VARCHAR(64) NOT NULL COMMENT 'NOME DA VERSÃO', -- STR (NOME)
+	`versao_abreviado` VARCHAR(8) NOT NULL COMMENT 'SIGLA ABREVIADA DA VERSÃO', -- STR (ABREVIAÇÃO)
+	PRIMARY KEY (`versao_id`),
+	UNIQUE KEY (`versao_nome`),
+	UNIQUE KEY (`versao_abreviado`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- TABELA VERSÍCULOS (404.350)
+DROP TABLE IF EXISTS `versiculos`;
+CREATE TABLE `versiculos` (
+	`versiculo_id` INT(6) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'TABELA DE VERSÍCULOS', -- INT/PK (CHAVE)
+	`versiculo_versao_id` TINYINT(2) UNSIGNED NOT NULL COMMENT 'FK DA TABELA DE VERSÕES', -- INT/FK (CHAVE VERSÃO)
+	`versiculo_livro_id` TINYINT(2) UNSIGNED NOT NULL COMMENT 'FK DA TABELA DE LIVROS', -- INT/FK (CHAVE LIVRO)
+	`versiculo_capitulo` TINYINT(2) UNSIGNED NOT NULL COMMENT 'NÚMERO DO CAPÍTULO DO LIVRO', -- INT (CAPÍTULO)
+	`versiculo_numero` TINYINT(2) UNSIGNED NOT NULL COMMENT 'NÚMERO DO VERSÍCULO', -- INT (NÚMERO)
+	`versiculo_texto` TEXT NOT NULL COMMENT 'TEXTO DO VERSÍCULO', -- STR (TEXTO)
+	PRIMARY KEY (`versiculo_id`),
+	UNIQUE KEY `versiculo_versao_livro_capitulo_numero` (`versiculo_versao_id`, `versiculo_livro_id`, `versiculo_capitulo`, `versiculo_numero`),
+	FOREIGN KEY (`versiculo_versao_id`) REFERENCES `versoes` (`versao_id`),
+	FOREIGN KEY (`versiculo_livro_id`) REFERENCES `livros` (`livro_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
