@@ -1,0 +1,12 @@
+# Ativação do RewriteEngine para permitir o gerenciamento de rotas
+RewriteEngine On
+
+# Definição da rota principal
+RewriteBase /biblia/
+
+# Redirecionamento de todas as requisições para o arquivo rotas.php
+RewriteRule ^(.*)$ rotas.php [QSA,L]
+
+# Utilizar esta regra antes da superior se precisar exibir todos os arquivos
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
