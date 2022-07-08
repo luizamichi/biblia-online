@@ -1,0 +1,25 @@
+body, input, textarea {
+	background-color: #1b1c1d !important;
+	color: #fff !important;
+}
+
+div, form {
+	background-color: #141515 !important;
+	color: #fff !important;
+}
+
+a, i, label, small {
+	color: #fff !important;
+}
+
+span {
+	color: #fff !important;
+}
+
+.ui.steps .step:after {
+	background-color: #1b1c1d !important;
+}
+
+.versiculo {
+	color: #757373 !important;
+}

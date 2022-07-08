@@ -1,0 +1,29 @@
+<div class="basic modal ui" id="modal-autenticacao">
+	<div class="header icon ui">
+		<i class="alternate icon unlock"></i>
+		Autenticação
+	</div>
+	<div class="content">
+		<form action="login" class="attached fluid form inverted ui" id="formulario-login" method="post">
+			<div class="field">
+				<label for="username">Login</label>
+				<input id="username" name="username" placeholder="Login" required="required" type="text"/>
+			</div>
+			<div class="field">
+				<label for="password">Senha</label>
+				<input id="password" name="password" placeholder="Senha" required="required" type="password"/>
+			</div>
+			<input id="logout" name="logout" type="hidden" value="0"/>
+		</form>
+	</div>
+	<div class="actions">
+		<div class="basic button cancel inverted red ui" id="fechar">
+			<i class="icon remove"></i>
+			Fechar
+		</div>
+		<div class="button green inverted ok ui" id="logar">
+			<i class="checkmark icon"></i>
+			Autenticar
+		</div>
+	</div>
+</div>
