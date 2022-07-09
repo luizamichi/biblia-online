@@ -4,6 +4,26 @@
  * Classe template
  *
  * @category Model
+ *
+ * @property string $titulo
+ * @property ?string $descricao
+ * @property ?string $local
+ * @property ?int $codigo
+ * @property ?int $linha
+ * @property ?Versiculo $versiculoAleatorio
+ * @property ?Versiculo $versiculoDiario
+ * @property ?Versiculo $versiculoSemanal
+ * @property ?Versiculo $versiculoMensal
+ * @property ?Autor $autor
+ * @property array<Livro> $livros
+ * @property array<Autor> $autores
+ * @property ?Livro $livro
+ * @property ?Capitulo $capitulo
+ * @property Versiculo $versiculo
+ * @property ?Testamento $testamento
+ * @property array<Testamento> $testamentos
+ * @property ?Versao $versao
+ * @property array<Versao> $versoes
  */
 class Template {
 	/**
