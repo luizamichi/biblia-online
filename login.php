@@ -16,11 +16,10 @@ if($request === "POST") {
 			$mensagem = "Usuário desconectado com sucesso.";
 		}
 
-		Sessao::unset("username", "password");
+		Operador::exit();
 	}
 	else {
-		Sessao::set("username", $username);
-		Sessao::set("password", $password);
+		Operador::try($username, $password);
 	}
 }
 
