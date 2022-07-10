@@ -17,6 +17,7 @@ $configuracao ??= Configuracao::ini();
 	<title><?= $configuracao::get("system_name", "project") ?></title>
 	<base href="<?= $configuracao::get("base_url", "project") ?>"/>
 	<link href="stylesheets/semantic.min.css" id="tema-claro" rel="stylesheet" type="text/css"/>
+	<link href="stylesheets/tema-escuro.css" id="tema-escuro" rel="stylesheet" type="text/css"/>
 	<link href="images/biblia.png" rel="icon shortcut" type="image/png"/>
 </head>
 
