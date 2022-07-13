@@ -25,3 +25,10 @@ catch(Throwable $th) {
 		exit;
 	}
 }
+
+switch($direcionador) {
+	// Rota específica para login/logout
+	case "login":
+		include_once __DIR__ . "/login.php";
+		break;
+}

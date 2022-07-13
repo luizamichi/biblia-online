@@ -265,7 +265,7 @@ botaoLogar.click(function() {
 		entradaLogout.val("0");
 		$.ajax({
 			type: "url",
-			method: "put",
+			method: "post",
 			url: formularioAutenticacao.attr("action"),
 			data: formularioAutenticacao.serialize(),
 			dataType: "json",
