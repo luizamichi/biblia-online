@@ -1,6 +1,12 @@
 <?php
 
-if(($argv[1] ?? null) === "model") {
+if(($argv[1] ?? null) === "dao") {
+	require_once __DIR__ . "/../daos/TestamentoDAO.php";
+
+	$testamento = TestamentoDAO::chave(1);
+	echo json_encode($testamento->json(), JSON_PRETTY_PRINT);
+}
+elseif(($argv[1] ?? null) === "model") {
 	require_once __DIR__ . "/../models/Testamento.php";
 
 	$testamento = new Testamento();
