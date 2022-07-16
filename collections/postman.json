@@ -1,0 +1,1543 @@
+{
+	"info": {
+		"_postman_id": "7d2e3f35-480a-4be2-b0a9-05e95bab230e",
+		"name": "Bíblia Online",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40589319"
+	},
+	"item": [
+		{
+			"name": "Autor",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=autor&campo=all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "autor"
+								},
+								{
+									"key": "campo",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apelido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=autor&campo=apelido&consulta=samuel",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "autor"
+								},
+								{
+									"key": "campo",
+									"value": "apelido"
+								},
+								{
+									"key": "consulta",
+									"value": "samuel"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chave",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=autor&campo=chave&consulta=8",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "autor"
+								},
+								{
+									"key": "campo",
+									"value": "chave"
+								},
+								{
+									"key": "consulta",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Livro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=autor&campo=livro&consulta=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "autor"
+								},
+								{
+									"key": "campo",
+									"value": "livro"
+								},
+								{
+									"key": "consulta",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserção",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "autor"
+								},
+								{
+									"key": "chave",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Eliú"
+								},
+								{
+									"key": "apelido",
+									"value": "eliu"
+								},
+								{
+									"key": "sobre",
+									"value": "Eliú foi um homem que viveu no tempo de Jó. Ele é mencionado no livro de Jó ao fazer um grande discurso dando o seu parecer sobre a situação de sofrimento que Jó estava enfrentando. O seu discurso mostra que na teologia de Eliú o sofrimento é uma correção divina."
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alteração",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "autor"
+								},
+								{
+									"key": "chave",
+									"value": "1"
+								},
+								{
+									"key": "nome",
+									"value": "Moisés"
+								},
+								{
+									"key": "apelido",
+									"value": "moises"
+								},
+								{
+									"key": "sobre",
+									"value": "Moisés foi um líder religioso, o segundo juiz de Israel, legislador e profeta, a quem a autoria da Torá é tradicionalmente atribuída.\nO nome Moisés é tradicionalmente traduzido como “tirado das águas”, embora um estudo linguístico aponte que tenha origem egípcia e signifique simplesmente “filho”, já que o fonema “séis” é a representação de “filho de” em egípcio, assim como Ramessés.\nSegundo a tradição judaico-cristã, Moisés foi um instrumento de Deus para libertar os Hebreus, tido por eles como seu principal legislador e um dos mais importantes lideres religiosos."
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remoção",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "autor"
+								},
+								{
+									"key": "chave",
+									"value": "41"
+								},
+								{
+									"key": "nome",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "apelido",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "sobre",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Capítulo",
+			"item": [
+				{
+					"name": "Número Livro Versão",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=capitulo&campo=numeroLivroVersao&consulta[]=1&consulta[]=LC&consulta[]=ARA1993",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "capitulo"
+								},
+								{
+									"key": "campo",
+									"value": "numeroLivroVersao"
+								},
+								{
+									"key": "consulta[]",
+									"value": "1",
+									"description": "Número"
+								},
+								{
+									"key": "consulta[]",
+									"value": "LC",
+									"description": "Livro"
+								},
+								{
+									"key": "consulta[]",
+									"value": "ARA1993",
+									"description": "Versão"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alteração",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "capitulo",
+									"type": "text"
+								},
+								{
+									"key": "numero",
+									"value": "117",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->chave[]",
+									"value": "15871",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->versao[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->livro[]",
+									"value": "19",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->capitulo[]",
+									"value": "117",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->numero[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->texto[]",
+									"value": "Louvai ao Senhor, vós todos os gentios, louvai-o, todos os povos.",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->chave[]",
+									"value": "15872",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->versao[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->livro[]",
+									"value": "19",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->capitulo[]",
+									"value": "117",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->numero[]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "versiculos->texto[]",
+									"value": "Porque mui grande é a sua misericórdia para conosco, e a fidelidade do Senhor subsiste para sempre. Aleluia!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Livro",
+			"item": [
+				{
+					"name": "Abreviado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=livro&campo=abreviado&consulta=LC",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "livro"
+								},
+								{
+									"key": "campo",
+									"value": "abreviado"
+								},
+								{
+									"key": "consulta",
+									"value": "LC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=livro&campo=all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "livro"
+								},
+								{
+									"key": "campo",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chave",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=livro&campo=chave&consulta=43",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "livro"
+								},
+								{
+									"key": "campo",
+									"value": "chave"
+								},
+								{
+									"key": "consulta",
+									"value": "43"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserção",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "livro"
+								},
+								{
+									"key": "chave",
+									"value": "0"
+								},
+								{
+									"key": "testamento",
+									"value": "2"
+								},
+								{
+									"key": "nome",
+									"value": "Eliú"
+								},
+								{
+									"key": "abreviado",
+									"value": "EL"
+								},
+								{
+									"key": "posicao",
+									"value": "40"
+								},
+								{
+									"key": "sobre",
+									"value": "O texto bíblico traz pouquíssimos detalhes sobre quem foi Eliú. Tudo o que se sabe é que Eliú era conhecido de Jó. Ele era filho de Baraquel, o buzita, da família de Rão. A referência à família de Rão é misteriosa, pois não há qualquer informação sobre essa família."
+								},
+								{
+									"key": "capitulos",
+									"value": "17"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alteração",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "livro"
+								},
+								{
+									"key": "chave",
+									"value": "41"
+								},
+								{
+									"key": "testamento",
+									"value": "2"
+								},
+								{
+									"key": "nome",
+									"value": "Marcos"
+								},
+								{
+									"key": "abreviado",
+									"value": "MC"
+								},
+								{
+									"key": "posicao",
+									"value": "2"
+								},
+								{
+									"key": "sobre",
+									"value": "O Evangelho Segundo Marcos é o segundo livro do Novo Testamento. Sendo o evangelho mais curto da Bíblia cristã, com apenas 16 capítulos, ele conta a história de Jesus de Nazaré. É considerado pelos eruditos um dos três evangelhos sinópticos."
+								},
+								{
+									"key": "capitulos",
+									"value": "16"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remoção",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "livro"
+								},
+								{
+									"key": "chave",
+									"value": "67"
+								},
+								{
+									"key": "testamento",
+									"value": "0"
+								},
+								{
+									"key": "nome",
+									"value": ""
+								},
+								{
+									"key": "abreviado",
+									"value": ""
+								},
+								{
+									"key": "posicao",
+									"value": "0"
+								},
+								{
+									"key": "sobre",
+									"value": ""
+								},
+								{
+									"key": "capitulos",
+									"value": "0"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Operador",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Usuário para CRUD",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Senha para CRUD",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{loginUrl}}/",
+							"host": [
+								"{{loginUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "logout",
+									"value": "1"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{loginUrl}}/",
+							"host": [
+								"{{loginUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Testamento",
+			"item": [
+				{
+					"name": "Abreviado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=testamento&campo=abreviado&consulta=NT",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "testamento"
+								},
+								{
+									"key": "campo",
+									"value": "abreviado"
+								},
+								{
+									"key": "consulta",
+									"value": "NT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=testamento&campo=all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "testamento"
+								},
+								{
+									"key": "campo",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chave",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=testamento&campo=chave&consulta=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "testamento"
+								},
+								{
+									"key": "campo",
+									"value": "chave"
+								},
+								{
+									"key": "consulta",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=testamento&campo=nome&consulta=Antigo Testamento",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "testamento"
+								},
+								{
+									"key": "campo",
+									"value": "nome"
+								},
+								{
+									"key": "consulta",
+									"value": "Antigo Testamento"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserção",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "testamento"
+								},
+								{
+									"key": "chave",
+									"value": "0"
+								},
+								{
+									"key": "nome",
+									"value": "Outro Testamento"
+								},
+								{
+									"key": "abreviado",
+									"value": "OT"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alteração",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "testamento"
+								},
+								{
+									"key": "chave",
+									"value": "1"
+								},
+								{
+									"key": "nome",
+									"value": "Antigo Testamento"
+								},
+								{
+									"key": "abreviado",
+									"value": "AT"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remoção",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "testamento"
+								},
+								{
+									"key": "chave",
+									"value": "3"
+								},
+								{
+									"key": "nome",
+									"value": ""
+								},
+								{
+									"key": "abreviado",
+									"value": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Versão",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=versao&campo=all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "versao"
+								},
+								{
+									"key": "campo",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Abreviado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=versao&campo=abreviado&consulta=NVI",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "versao"
+								},
+								{
+									"key": "campo",
+									"value": "abreviado"
+								},
+								{
+									"key": "consulta",
+									"value": "NVI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chave",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=versao&campo=chave&consulta=5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "versao"
+								},
+								{
+									"key": "campo",
+									"value": "chave"
+								},
+								{
+									"key": "consulta",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=versao&campo=nome&consulta=Nova Versão Transformadora",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "versao"
+								},
+								{
+									"key": "campo",
+									"value": "nome"
+								},
+								{
+									"key": "consulta",
+									"value": "Nova Versão Transformadora"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserção",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "versao"
+								},
+								{
+									"key": "chave",
+									"value": "0"
+								},
+								{
+									"key": "nome",
+									"value": "Almeida Atualizada"
+								},
+								{
+									"key": "abreviado",
+									"value": "AA"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alteração",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "versao"
+								},
+								{
+									"key": "chave",
+									"value": "9"
+								},
+								{
+									"key": "nome",
+									"value": "Almeida Recebida"
+								},
+								{
+									"key": "abreviado",
+									"value": "AR"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remoção",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "versao"
+								},
+								{
+									"key": "chave",
+									"value": "14"
+								},
+								{
+									"key": "nome",
+									"value": ""
+								},
+								{
+									"key": "abreviado",
+									"value": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Versículo",
+			"item": [
+				{
+					"name": "Chave",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=versiculo&campo=chave&consulta=5000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "versiculo"
+								},
+								{
+									"key": "campo",
+									"value": "chave"
+								},
+								{
+									"key": "consulta",
+									"value": "5000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Versão Livro Capítulo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=versiculo&campo=versaoLivroCapitulo&consulta[]=1&consulta[]=40&consulta[]=4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "versiculo"
+								},
+								{
+									"key": "campo",
+									"value": "versaoLivroCapitulo"
+								},
+								{
+									"key": "consulta[]",
+									"value": "1",
+									"description": "Versão"
+								},
+								{
+									"key": "consulta[]",
+									"value": "40",
+									"description": "Livro"
+								},
+								{
+									"key": "consulta[]",
+									"value": "4",
+									"description": "Capítulo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Versão Livro Capítulo Número",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/?classe=versiculo&campo=versaoLivroCapituloNumero&consulta[]=1&consulta[]=40&consulta[]=4&consulta[]=4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "classe",
+									"value": "versiculo"
+								},
+								{
+									"key": "campo",
+									"value": "versaoLivroCapituloNumero"
+								},
+								{
+									"key": "consulta[]",
+									"value": "1",
+									"description": "Versão"
+								},
+								{
+									"key": "consulta[]",
+									"value": "40",
+									"description": "Livro"
+								},
+								{
+									"key": "consulta[]",
+									"value": "4",
+									"description": "Capítulo"
+								},
+								{
+									"key": "consulta[]",
+									"value": "4",
+									"description": "Número"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alteração",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "versiculo"
+								},
+								{
+									"key": "chave",
+									"value": "23216"
+								},
+								{
+									"key": "versao",
+									"value": "1"
+								},
+								{
+									"key": "livro",
+									"value": "40"
+								},
+								{
+									"key": "capitulo",
+									"value": "4"
+								},
+								{
+									"key": "numero",
+									"value": "4"
+								},
+								{
+									"key": "texto",
+									"value": "Jesus, porém, respondeu: <j>Está escrito: Não só de pão viverá o homem, mas de toda palavra que procede da boca de Deus.</j>"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remoção",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "classe",
+									"value": "versiculo"
+								},
+								{
+									"key": "chave",
+									"value": "23216"
+								},
+								{
+									"key": "versao",
+									"value": "0"
+								},
+								{
+									"key": "livro",
+									"value": "0"
+								},
+								{
+									"key": "capitulo",
+									"value": "0"
+								},
+								{
+									"key": "numero",
+									"value": "0"
+								},
+								{
+									"key": "texto",
+									"value": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		},
+		{
+			"key": "loginUrl",
+			"value": "http://localhost:8080/login",
+			"type": "string"
+		}
+	]
+}
