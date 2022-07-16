@@ -27,6 +27,10 @@ catch(Throwable $th) {
 }
 
 switch($direcionador) {
+	// Realiza CRUD no banco de dados
+	case "api":
+		include_once __DIR__ . "/api.php";
+		break;
 	// Rota específica para login/logout
 	case "login":
 		include_once __DIR__ . "/login.php";
