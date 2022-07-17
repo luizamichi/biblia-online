@@ -1,0 +1,1538 @@
+{
+	"_type": "export",
+	"__export_format": 4,
+	"__export_date": "2023-09-09T15:15:30.198Z",
+	"__export_source": "insomnia.desktop.app:v2023.5.8",
+	"resources": [
+		{
+			"_id": "req_90f71eb6a3e84d13b8529d49482f1fc5",
+			"parentId": "fld_1710bb63de1f499e8bb2f2213d376bba",
+			"modified": 1694271733333,
+			"created": 1648515695266,
+			"url": "{{ _.base_url }}",
+			"name": "All",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "autor",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "all",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509888012,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_1710bb63de1f499e8bb2f2213d376bba",
+			"parentId": "wrk_1c7431b4a1854807a25bccbfaac990e7",
+			"modified": 1694271561371,
+			"created": 1648512646007,
+			"name": "Autor",
+			"description": "",
+			"environment": {
+				"base_url": "http://localhost:8080/api"
+			},
+			"environmentPropertyOrder": {
+				"&": [
+					"base_url"
+				]
+			},
+			"metaSortKey": -1648509887937,
+			"_type": "request_group"
+		},
+		{
+			"_id": "wrk_1c7431b4a1854807a25bccbfaac990e7",
+			"parentId": null,
+			"modified": 1694272450700,
+			"created": 1694271372778,
+			"name": "Bíblia Online",
+			"description": "",
+			"scope": "collection",
+			"_type": "workspace"
+		},
+		{
+			"_id": "req_f540be41226a4f4a85f71b3747fd4810",
+			"parentId": "fld_1710bb63de1f499e8bb2f2213d376bba",
+			"modified": 1694271736064,
+			"created": 1648512646015,
+			"url": "{{ _.base_url }}",
+			"name": "Apelido",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "autor",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "apelido",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "samuel",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "STR"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887962,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ec7eb32877574e7e9a8b4efa67428f06",
+			"parentId": "fld_1710bb63de1f499e8bb2f2213d376bba",
+			"modified": 1694271671443,
+			"created": 1648512646010,
+			"url": "{{ _.base_url }}",
+			"name": "Chave",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "autor",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "chave",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "8",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "INT"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887912,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_9ee2a0b9ec7e43d294051d9076c3eddd",
+			"parentId": "fld_1710bb63de1f499e8bb2f2213d376bba",
+			"modified": 1694271727750,
+			"created": 1694271715778,
+			"url": "{{ _.base_url }}",
+			"name": "Livro",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "autor",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "livro",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "2",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "INT"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887799.5,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_dfc933c9d58b4eeebde6801769d610c3",
+			"parentId": "fld_1710bb63de1f499e8bb2f2213d376bba",
+			"modified": 1694271843023,
+			"created": 1648512646024,
+			"url": "{{ _.base_url }}",
+			"name": "Alteração",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_71983a175fdc4992bee10093d831be21",
+						"name": "classe",
+						"value": "autor",
+						"description": "STR"
+					},
+					{
+						"id": "pair_bfcfac64043442fe8fc5e03683b830d6",
+						"name": "chave",
+						"value": "1",
+						"description": "INT"
+					},
+					{
+						"id": "pair_29715f710ce44a78953317c4c2bbf177",
+						"name": "nome",
+						"value": "Moisés",
+						"description": "STR"
+					},
+					{
+						"id": "pair_01b9f2c74d97426582b778282f287689",
+						"name": "apelido",
+						"value": "moises",
+						"description": "STR"
+					},
+					{
+						"id": "pair_72bfcef23f57463cbe7d480ac4cabc3d",
+						"name": "sobre",
+						"value": "Moisés foi um líder religioso, o segundo juiz de Israel, legislador e profeta, a quem a autoria da Torá é tradicionalmente atribuída.\nO nome Moisés é tradicionalmente traduzido como “tirado das águas”, embora um estudo linguístico aponte que tenha origem egípcia e signifique simplesmente “filho”, já que o fonema “séis” é a representação de “filho de” em egípcio, assim como Ramessés.\nSegundo a tradição judaico-cristã, Moisés foi um instrumento de Deus para libertar os Hebreus, tido por eles como seu principal legislador e um dos mais importantes lideres religiosos.",
+						"description": "STR",
+						"type": "text",
+						"multiline": true
+					}
+				]
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"id": "pair_0d964c028a1749f48c2593cda163c2d0"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1648509887712,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_66812e18e3a74e30ba94c88fe54ac422",
+			"parentId": "fld_000d2002bab54201bee190fb66d7942f",
+			"modified": 1694271997931,
+			"created": 1648921035937,
+			"url": "{{ _.base_url }}",
+			"name": "Número Livro Versão",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "capitulo",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "numeroLivroVersao",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta[]",
+					"value": "1",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "INT (número)"
+				},
+				{
+					"id": "pair_cf63cade52c04a44a71e702f524fb3e8",
+					"name": "consulta[]",
+					"value": "LC",
+					"description": "STR (livro abreviado)"
+				},
+				{
+					"id": "pair_84764d6df7ba4c0b8e277fab1022d79c",
+					"name": "consulta[]",
+					"value": "ARA1993",
+					"description": "STR (versão abreviada)"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887912,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_000d2002bab54201bee190fb66d7942f",
+			"parentId": "wrk_1c7431b4a1854807a25bccbfaac990e7",
+			"modified": 1694271898143,
+			"created": 1648921035931,
+			"name": "Capítulo",
+			"description": "",
+			"environment": {
+				"base_url": "http://localhost:8080/api"
+			},
+			"environmentPropertyOrder": {
+				"&": [
+					"base_url"
+				]
+			},
+			"metaSortKey": -1648509887887,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_731154e5d0ad468882a7288c990d0510",
+			"parentId": "fld_000d2002bab54201bee190fb66d7942f",
+			"modified": 1694272065254,
+			"created": 1648935303095,
+			"url": "{{ _.base_url }}",
+			"name": "Alteração",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_1c52ae129b7141bb88eaa47d58f58041",
+						"name": "classe",
+						"value": "capitulo",
+						"description": "STR"
+					},
+					{
+						"id": "pair_5febe6f39efd4781911de0ff4578a679",
+						"name": "numero",
+						"value": "117",
+						"description": "INT",
+						"disabled": false
+					},
+					{
+						"id": "pair_05da2c77a41346918783a5fa0fb077f5",
+						"name": "versiculos->chave[]",
+						"value": "15871",
+						"description": "INT"
+					},
+					{
+						"id": "pair_8f285941557a4b9d960c3d6bd52397ab",
+						"name": "versiculos->versao[]",
+						"value": "1",
+						"description": "INT"
+					},
+					{
+						"id": "pair_4aac5eff26c34d67b03588f2b3846978",
+						"name": "versiculos->livro[]",
+						"value": "19",
+						"description": "INT"
+					},
+					{
+						"id": "pair_6af9b5650b464d5fac71714c6e1457a8",
+						"name": "versiculos->capitulo[]",
+						"value": "117",
+						"description": "INT"
+					},
+					{
+						"id": "pair_fb76c7b6f5f44839980f92df528c15d6",
+						"name": "versiculos->numero[]",
+						"value": "1",
+						"description": "INT"
+					},
+					{
+						"id": "pair_5957dd6902b244dfbae768f101940606",
+						"name": "versiculos->texto[]",
+						"value": "Louvai ao Senhor, vós todos os gentios, louvai-o, todos os povos.",
+						"description": "STR",
+						"type": "text",
+						"multiline": true
+					},
+					{
+						"id": "pair_ea6daa80564b460f98f6e516e2ccbe68",
+						"name": "versiculos->chave[]",
+						"value": "15872",
+						"description": "INT"
+					},
+					{
+						"id": "pair_a4fa839a09f0407b8f6872a99a9cf9d7",
+						"name": "versiculos->versao[]",
+						"value": "1",
+						"description": "INT"
+					},
+					{
+						"id": "pair_c24ef5733fbf48c69cc86144c3a5b7ff",
+						"name": "versiculos->livro[]",
+						"value": "19",
+						"description": "INT"
+					},
+					{
+						"id": "pair_b49b42b023864f028562564d5a0182c6",
+						"name": "versiculos->capitulo[]",
+						"value": "117",
+						"description": "INT"
+					},
+					{
+						"id": "pair_9aa69f9e98d54b3da73d94fb53151529",
+						"name": "versiculos->numero[]",
+						"value": "2",
+						"description": "INT"
+					},
+					{
+						"id": "pair_ab914c2c53164f8d9eaf12c35a09a43d",
+						"name": "versiculos->texto[]",
+						"value": "Porque mui grande é a sua misericórdia para conosco, e a fidelidade do Senhor subsiste para sempre. Aleluia!",
+						"description": "STR",
+						"type": "text",
+						"multiline": true
+					}
+				]
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "multipart/form-data",
+					"id": "pair_e775747fcc244af58ba28846dc37d95d"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1648509887899.5,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f64dec6584c3495581c0979c47cdfe33",
+			"parentId": "fld_1ca9706375384656a22a229730c51b21",
+			"modified": 1694272148366,
+			"created": 1648925529333,
+			"url": "{{ _.base_url }}",
+			"name": "Abreviado",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "livro",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "abreviado",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "LC",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "STR"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887862,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_1ca9706375384656a22a229730c51b21",
+			"parentId": "wrk_1c7431b4a1854807a25bccbfaac990e7",
+			"modified": 1694272082710,
+			"created": 1648925529305,
+			"name": "Livro",
+			"description": "",
+			"environment": {
+				"base_url": "http://localhost:8080/api"
+			},
+			"environmentPropertyOrder": {
+				"&": [
+					"base_url"
+				]
+			},
+			"metaSortKey": -1648509887862,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_c938836d968f46b399f054cd28476e26",
+			"parentId": "fld_1ca9706375384656a22a229730c51b21",
+			"modified": 1694272133009,
+			"created": 1648925529345,
+			"url": "{{ _.base_url }}",
+			"name": "All",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "livro",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "all",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887737,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_607506b33a0249129a974522073e1fa4",
+			"parentId": "fld_1ca9706375384656a22a229730c51b21",
+			"modified": 1694272125074,
+			"created": 1648925529321,
+			"url": "{{ _.base_url }}",
+			"name": "Chave",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "livro",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "chave",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "43",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "INT"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887724.5,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_cb786395849046a7b2d8a6a468bae97e",
+			"parentId": "fld_1ca9706375384656a22a229730c51b21",
+			"modified": 1694272173857,
+			"created": 1648925529340,
+			"url": "{{ _.base_url }}",
+			"name": "Alteração",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_71983a175fdc4992bee10093d831be21",
+						"name": "classe",
+						"value": "livro",
+						"description": "STR"
+					},
+					{
+						"id": "pair_bfcfac64043442fe8fc5e03683b830d6",
+						"name": "chave",
+						"value": "41",
+						"description": "INT"
+					},
+					{
+						"id": "pair_34ae25b579534aa6955cd629207bbf4b",
+						"name": "testamento",
+						"value": "2",
+						"description": "INT"
+					},
+					{
+						"id": "pair_29715f710ce44a78953317c4c2bbf177",
+						"name": "nome",
+						"value": "Marcos",
+						"description": "STR"
+					},
+					{
+						"id": "pair_01b9f2c74d97426582b778282f287689",
+						"name": "abreviado",
+						"value": "MC",
+						"description": "STR"
+					},
+					{
+						"id": "pair_112f8440e08b49afbb6eee4aa9778808",
+						"name": "posicao",
+						"value": "2",
+						"description": "INT"
+					},
+					{
+						"id": "pair_72bfcef23f57463cbe7d480ac4cabc3d",
+						"name": "sobre",
+						"value": "O Evangelho Segundo Marcos é o segundo livro do Novo Testamento. Sendo o evangelho mais curto da Bíblia cristã, com apenas 16 capítulos, ele conta a história de Jesus de Nazaré. É considerado pelos eruditos um dos três evangelhos sinópticos.",
+						"description": "STR",
+						"type": "text",
+						"multiline": true
+					},
+					{
+						"id": "pair_14eeec23c2a141a0a67787724d6f3642",
+						"name": "capitulos",
+						"value": "16",
+						"description": "INT"
+					}
+				]
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"id": "pair_0d964c028a1749f48c2593cda163c2d0"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1648509887712,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_dfc3f43e399b4405abcb36532cca17c5",
+			"parentId": "fld_1768c141bab44271834e48b208700e1f",
+			"modified": 1694272415134,
+			"created": 1648521381825,
+			"url": "{{ _.base_url }}",
+			"name": "Login",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_71983a175fdc4992bee10093d831be21",
+						"name": "username",
+						"value": "Usuário para CRUD",
+						"description": "STR"
+					},
+					{
+						"id": "pair_14eeec23c2a141a0a67787724d6f3642",
+						"name": "password",
+						"value": "Senha para CRUD",
+						"description": "STR"
+					}
+				]
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"id": "pair_0d964c028a1749f48c2593cda163c2d0"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1648509887712,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_1768c141bab44271834e48b208700e1f",
+			"parentId": "wrk_1c7431b4a1854807a25bccbfaac990e7",
+			"modified": 1694272434304,
+			"created": 1648521381799,
+			"name": "Operador",
+			"description": "",
+			"environment": {
+				"base_url": "http://localhost:8080/login"
+			},
+			"environmentPropertyOrder": {
+				"&": [
+					"base_url"
+				]
+			},
+			"metaSortKey": -1648509887849.5,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_5b45fad9d95949c0b0c1a3f8560298a9",
+			"parentId": "fld_1768c141bab44271834e48b208700e1f",
+			"modified": 1694272428499,
+			"created": 1648527026123,
+			"url": "{{ _.base_url }}",
+			"name": "Logout",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_71983a175fdc4992bee10093d831be21",
+						"name": "logout",
+						"value": "1",
+						"description": "INT"
+					}
+				]
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"id": "pair_0d964c028a1749f48c2593cda163c2d0"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1648509887662,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a4ccbc12d7f046dfad4d1be5024654ed",
+			"parentId": "fld_ca819b90bd2d4c7c8beda20ffa5ebd4b",
+			"modified": 1694272248761,
+			"created": 1648510098415,
+			"url": "{{ _.base_url }}",
+			"name": "Abreviado",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "testamento",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "abreviado",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"disabled": false,
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "NT",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"disabled": false,
+					"description": "STR"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509888012,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_ca819b90bd2d4c7c8beda20ffa5ebd4b",
+			"parentId": "wrk_1c7431b4a1854807a25bccbfaac990e7",
+			"modified": 1648925561419,
+			"created": 1648509887837,
+			"name": "Testamento",
+			"description": "",
+			"environment": {
+				"base_url": "http://localhost:8080/api"
+			},
+			"environmentPropertyOrder": {
+				"&": [
+					"base_url"
+				]
+			},
+			"metaSortKey": -1648509887837,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_76ea0d1d26134574af573431c0131707",
+			"parentId": "fld_ca819b90bd2d4c7c8beda20ffa5ebd4b",
+			"modified": 1694272252966,
+			"created": 1648515611683,
+			"url": "{{ _.base_url }}",
+			"name": "All",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "testamento",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"id": "pair_118f882f8f79460b810cbb2d56d8fc50",
+					"name": "campo",
+					"value": "all",
+					"description": "STR",
+					"disabled": false
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887962,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_41b0abb9e09944e6b18ab9ee23e30b03",
+			"parentId": "fld_ca819b90bd2d4c7c8beda20ffa5ebd4b",
+			"modified": 1694272258562,
+			"created": 1648509658998,
+			"url": "{{ _.base_url }}",
+			"name": "Chave",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "testamento",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "chave",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"disabled": false,
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "1",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"disabled": false,
+					"description": "INT"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887912,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_126543835f004ff58d10cb8c0400c3a0",
+			"parentId": "fld_ca819b90bd2d4c7c8beda20ffa5ebd4b",
+			"modified": 1694272263349,
+			"created": 1648510121166,
+			"url": "{{ _.base_url }}",
+			"name": "Nome",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "testamento",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "nome",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "Antigo Testamento",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "STR"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887887,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_2434d6ca88a34229b9870bdea9bfcef9",
+			"parentId": "fld_ca819b90bd2d4c7c8beda20ffa5ebd4b",
+			"modified": 1694272279659,
+			"created": 1648510345808,
+			"url": "{{ _.base_url }}",
+			"name": "Alteração",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_71983a175fdc4992bee10093d831be21",
+						"name": "classe",
+						"value": "testamento",
+						"description": "STR",
+						"disabled": false
+					},
+					{
+						"id": "pair_bfcfac64043442fe8fc5e03683b830d6",
+						"name": "chave",
+						"value": "1",
+						"description": "INT",
+						"disabled": false
+					},
+					{
+						"id": "pair_29715f710ce44a78953317c4c2bbf177",
+						"name": "nome",
+						"value": "Antigo Testamento",
+						"description": "STR",
+						"disabled": false
+					},
+					{
+						"id": "pair_01b9f2c74d97426582b778282f287689",
+						"name": "abreviado",
+						"value": "AT",
+						"description": "STR",
+						"disabled": false
+					}
+				]
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"id": "pair_0d964c028a1749f48c2593cda163c2d0"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1648509887712,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1a2bd9eb2aab47daaf7f8e2a16e090ac",
+			"parentId": "fld_a3e6343e44db4f3fa6b47bf711c2c130",
+			"modified": 1694272313967,
+			"created": 1648926308703,
+			"url": "{{ _.base_url }}",
+			"name": "All",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "versao",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "all",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509888012,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_a3e6343e44db4f3fa6b47bf711c2c130",
+			"parentId": "wrk_1c7431b4a1854807a25bccbfaac990e7",
+			"modified": 1648926313206,
+			"created": 1648926308672,
+			"name": "Versão",
+			"description": "",
+			"environment": {
+				"base_url": "http://localhost:8080/api"
+			},
+			"environmentPropertyOrder": {
+				"&": [
+					"base_url"
+				]
+			},
+			"metaSortKey": -1648509887782.3125,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_0dab30d404f74826bb291394e3536b63",
+			"parentId": "fld_a3e6343e44db4f3fa6b47bf711c2c130",
+			"modified": 1694272318328,
+			"created": 1648926308690,
+			"url": "{{ _.base_url }}",
+			"name": "Abreviado",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "versao",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "abreviado",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "NVI",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "STR"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887962,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1dc2b960835f4c34a34b5b76726857a9",
+			"parentId": "fld_a3e6343e44db4f3fa6b47bf711c2c130",
+			"modified": 1694272323196,
+			"created": 1648926308679,
+			"url": "{{ _.base_url }}",
+			"name": "Chave",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "versao",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "chave",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "5",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "INT"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887912,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_5246c25ae6bd4361a13127f886c4f6df",
+			"parentId": "fld_a3e6343e44db4f3fa6b47bf711c2c130",
+			"modified": 1694272327888,
+			"created": 1648926385561,
+			"url": "{{ _.base_url }}",
+			"name": "Nome",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "versao",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "nome",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "Nova Versão Transformadora",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "STR"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887887,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_89397fcb478a4ccf88b3ad460fee7eb9",
+			"parentId": "fld_a3e6343e44db4f3fa6b47bf711c2c130",
+			"modified": 1694272338487,
+			"created": 1648926308698,
+			"url": "{{ _.base_url }}",
+			"name": "Alteração",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_71983a175fdc4992bee10093d831be21",
+						"name": "classe",
+						"value": "versao",
+						"description": "STR"
+					},
+					{
+						"id": "pair_bfcfac64043442fe8fc5e03683b830d6",
+						"name": "chave",
+						"value": "9",
+						"description": "INT"
+					},
+					{
+						"id": "pair_29715f710ce44a78953317c4c2bbf177",
+						"name": "nome",
+						"value": "Almeida Recebida",
+						"description": "STR"
+					},
+					{
+						"id": "pair_01b9f2c74d97426582b778282f287689",
+						"name": "abreviado",
+						"value": "AR",
+						"description": "STR"
+					}
+				]
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"id": "pair_0d964c028a1749f48c2593cda163c2d0"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1648509887712,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d41fb0e0592741b59fece5f132dfa647",
+			"parentId": "fld_84f13768db7946f1932b7fb2d6ae8a46",
+			"modified": 1694272364834,
+			"created": 1648926680216,
+			"url": "{{ _.base_url }}",
+			"name": "Chave",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "versiculo",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "chave",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta",
+					"value": "5000",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "INT"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887912,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "fld_84f13768db7946f1932b7fb2d6ae8a46",
+			"parentId": "wrk_1c7431b4a1854807a25bccbfaac990e7",
+			"modified": 1648926680209,
+			"created": 1648926680209,
+			"name": "Versículo",
+			"description": "",
+			"environment": {
+				"base_url": "http://localhost:8080/api"
+			},
+			"environmentPropertyOrder": {
+				"&": [
+					"base_url"
+				]
+			},
+			"metaSortKey": -1648509887781.5312,
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_22ed23587c854174a8bc10a364a057d9",
+			"parentId": "fld_84f13768db7946f1932b7fb2d6ae8a46",
+			"modified": 1694272378669,
+			"created": 1648926680242,
+			"url": "{{ _.base_url }}",
+			"name": "Versão Livro Capítulo",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "versiculo",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "versaoLivroCapitulo",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta[]",
+					"value": "1",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "INT (versão)"
+				},
+				{
+					"id": "pair_b94246fb3cef4b5b85ce70004a8a2517",
+					"name": "consulta[]",
+					"value": "40",
+					"description": "INT (livro)"
+				},
+				{
+					"id": "pair_0b4a0d665cad410c807ff8474a1534fd",
+					"name": "consulta[]",
+					"value": "4",
+					"description": "INT (capítulo)"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887887,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d711a9df928448d3a2352dc10518f587",
+			"parentId": "fld_84f13768db7946f1932b7fb2d6ae8a46",
+			"modified": 1694272388049,
+			"created": 1648926842773,
+			"url": "{{ _.base_url }}",
+			"name": "Versão Livro Capítulo Número",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "classe",
+					"value": "versiculo",
+					"id": "pair_b81a0f7b0eec4996a0c6d2917b139d44",
+					"description": "STR"
+				},
+				{
+					"name": "campo",
+					"value": "versaoLivroCapituloNumero",
+					"id": "pair_1a36b1f5979e4336a0ddbe0f063174a0",
+					"description": "STR"
+				},
+				{
+					"name": "consulta[]",
+					"value": "1",
+					"id": "pair_0eb78e019dfd49d89b900b6dc96f5cd3",
+					"description": "INT (versão)"
+				},
+				{
+					"id": "pair_b94246fb3cef4b5b85ce70004a8a2517",
+					"name": "consulta[]",
+					"value": "40",
+					"description": "INT (livro)"
+				},
+				{
+					"id": "pair_0b4a0d665cad410c807ff8474a1534fd",
+					"name": "consulta[]",
+					"value": "4",
+					"description": "INT (capítulo)"
+				},
+				{
+					"id": "pair_13a5edba13af4fbbb3b349cd888f5f77",
+					"name": "consulta[]",
+					"value": "4",
+					"description": "INT (número)"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1648509887874.5,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "req_3f0f35bafa5b408abde216ac5352944d",
+			"parentId": "fld_84f13768db7946f1932b7fb2d6ae8a46",
+			"modified": 1694272402222,
+			"created": 1648926680235,
+			"url": "{{ _.base_url }}",
+			"name": "Alteração",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_71983a175fdc4992bee10093d831be21",
+						"name": "classe",
+						"value": "versiculo",
+						"description": "STR"
+					},
+					{
+						"id": "pair_bfcfac64043442fe8fc5e03683b830d6",
+						"name": "chave",
+						"value": "23216",
+						"description": "INT"
+					},
+					{
+						"id": "pair_dd3b73a543c84419ad65be1f7c2ffa98",
+						"name": "versao",
+						"value": "1",
+						"description": "INT",
+						"disabled": false
+					},
+					{
+						"id": "pair_29715f710ce44a78953317c4c2bbf177",
+						"name": "livro",
+						"value": "40",
+						"description": "INT",
+						"disabled": false
+					},
+					{
+						"id": "pair_01b9f2c74d97426582b778282f287689",
+						"name": "capitulo",
+						"value": "4",
+						"description": "INT"
+					},
+					{
+						"id": "pair_128d6e393a9b443081a45d02c5de5c45",
+						"name": "numero",
+						"value": "4",
+						"description": "INT"
+					},
+					{
+						"id": "pair_c48ebe212356459e9084fd284768c7d7",
+						"name": "texto",
+						"value": "Jesus, porém, respondeu: <j>Está escrito: Não só de pão viverá o homem, mas de toda palavra que procede da boca de Deus.</j>",
+						"description": "STR",
+						"type": "text",
+						"multiline": "text/html"
+					}
+				]
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"id": "pair_0d964c028a1749f48c2593cda163c2d0"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1648509887712,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
+			"_id": "env_dfda6e813237487d9585512abe3b92d5",
+			"parentId": "wrk_1c7431b4a1854807a25bccbfaac990e7",
+			"modified": 1648509869414,
+			"created": 1648509624495,
+			"name": "Base Environment",
+			"data": {},
+			"dataPropertyOrder": {},
+			"color": null,
+			"isPrivate": false,
+			"metaSortKey": 1648509624495,
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_75b9aa549b2a4dc9bdd92c95da2661ff",
+			"parentId": "wrk_1c7431b4a1854807a25bccbfaac990e7",
+			"modified": 1650424917976,
+			"created": 1648509624498,
+			"name": "Default Jar",
+			"cookies": [],
+			"_type": "cookie_jar"
+		}
+	]
+}
