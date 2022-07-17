@@ -15,3 +15,7 @@ Sessao::unset("usuario", "email", "senha");
 echo PHP_EOL . "Usuário: " . Sessao::get("usuario") . PHP_EOL;
 echo "Email: " . Sessao::get("email") . PHP_EOL;
 echo "Senha: " . Sessao::get("senha") . PHP_EOL;
+
+echo PHP_EOL . "Testamentos: " . json_encode(array_map(fn($testamento) => $testamento, Sessao::testamentos()), JSON_PRETTY_PRINT);
+
+echo PHP_EOL . "Versões: " . json_encode(array_map(fn($versao) => $versao, Sessao::versoes()), JSON_PRETTY_PRINT);
