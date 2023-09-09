@@ -19,3 +19,7 @@ span {
 .ui.steps .step:after {
 	background-color: #1b1c1d !important;
 }
+
+.versiculo {
+	color: #757373 !important;
+}

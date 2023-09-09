@@ -87,7 +87,7 @@ $capitulo ??= new Capitulo(0, [new Versiculo]);
 	<div class="attached fluid segment ui">
 		<p>
 			<?php foreach($capitulo->versiculos as $versiculo): ?>
-			<small><?= $versiculo->numero ?></small> <?= nl2br($versiculo->texto) ?>
+			<small class="versiculo"><?= $versiculo->numero ?></small> <?= nl2br($versiculo->texto) ?>
 			<?php endforeach; ?>
 		</p>
 	</div>

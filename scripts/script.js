@@ -93,6 +93,10 @@ botaoDiminuiFonte.click(function() {
 	localStorage.setItem("fonte", novoTamanhoFonte);
 });
 
+// Altera a cor das tags "J" e dos números dos versículos
+$("j").css("color", "#910091");
+$(".versiculo").css("color", "#999");
+
 // Habilita o menu suspenso
 $(".dropdown.ui").dropdown();
 

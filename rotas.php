@@ -33,7 +33,7 @@ catch(Throwable $th) {
 			"sucesso" => false
 		]));
 	}
-	elseif(in_array($direcionador, ["", "login", "autores", "livros", "testamentos", "versoes"])) {
+	else {
 		RotaController::erro();
 		exit;
 	}
