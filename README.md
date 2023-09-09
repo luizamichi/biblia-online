@@ -1,5 +1,3 @@
-Aqui está uma versão aprimorada do seu arquivo README.md para o projeto "Bíblia Online":
-
 # Bíblia Online
 
 Este é um site em PHP desenvolvido com a utilização do MySQL para armazenamento de dados, com o objetivo de fornecer acesso fácil e rápido aos versículos da Bíblia, livre de anúncios presentes em diversos sites da web que oferecem a mesma funcionalidade.
