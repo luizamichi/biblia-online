@@ -16,7 +16,7 @@ $versiculo ??= new Versiculo;
 		<i class="bookmark icon"></i>
 		<div class="content">
 			<div class="title">
-				<a href="<?= $versiculo->livro->testamento->abreviado ?>"><?= $versiculo->livro->testamento->nome ?></a>
+				<a href="<?= VERSAO . "livros/" . $versiculo->livro->testamento->abreviado ?>"><?= $versiculo->livro->testamento->nome ?></a>
 			</div>
 			<div class="description"><?= $versiculo->livro->testamento->abreviado ?></div>
 		</div>
@@ -25,7 +25,7 @@ $versiculo ??= new Versiculo;
 		<i class="book icon"></i>
 		<div class="content">
 			<div class="title">
-				<a href="<?= $versiculo->livro->abreviado ?>"><?= $versiculo->livro->nome ?></a>
+				<a href="<?= $versiculo->versao->abreviado . "/" . $versiculo->livro->abreviado ?>"><?= $versiculo->livro->nome ?></a>
 			</div>
 			<div class="description"><?= $versiculo->livro->abreviado ?></div>
 		</div>

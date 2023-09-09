@@ -1,27 +1,45 @@
+Aqui está uma versão aprimorada do seu arquivo README.md para o projeto "Bíblia Online":
+
 # Bíblia Online
-_[biblia.luizamichi.com.br](http://biblia.luizamichi.com.br/)_
 
-Site feito em PHP com a utilização do MySQL para armazenamento de dados.
+Este é um site em PHP desenvolvido com a utilização do MySQL para armazenamento de dados, com o objetivo de fornecer acesso fácil e rápido aos versículos da Bíblia, livre de anúncios presentes em diversos sites da web que oferecem a mesma funcionalidade.
 
-Criado para poder ter acesso fácil e rápido aos versículos da Bíblia livre de anúncios dos diversos sites na web que têm a mesma funcionalidade.
+## Configurações
 
+### Arquivo de configuração (biblia.ini)
 
-### Configurações
-No arquivo `biblia.ini` contém as configurações que devem ser definidas para comunicação com o SGBD, contém as configurações para login de usuário e também as operações permitidas de CRUD (funciona somente CREATE e READ).
+- O arquivo `biblia.ini` contém diversas configurações essenciais para o funcionamento do sistema, incluindo:
+  - Configurações de comunicação com o SGBD;
+  - Detalhes de autenticação de usuários;
+  - Definições de permissões de operações (somente UPDATE e READ estão habilitadas);
+  - Opção de ativar a depuração para exibir erros em tela;
+  - Possibilidade de registro de erros em arquivo quando a depuração está desativada;
+  - Restrições de quais arquivos podem ser acessados;
+  - Nome do COOKIE de sessão;
+  - Título e descrição do sistema.
 
-Ativando a depuração, os possíveis erros gerados serão exibidos em tela, caso contrário será salvo o último erro no arquivo `biblia.ini`.
+### Arquivo de configuração de URL (`.htaccess`)
 
-Também é possível restringir quais arquivos poderão ser acessados no arquivo `biblia.ini` e definir o nome do COOKIE de sessão, o título e descrição do sistema.
+- No arquivo `.htaccess`, você deve configurar a URL base do sistema para garantir o funcionamento correto das rotas.
 
-No arquivo `.htaccess` deve ser definida a URL base do sistema.
+## Requisitos do sistema
 
-
-### Versões
 - [MySQL](https://www.mysql.com/): 8.0.28
 - [PHP](https://www.php.net/): 8.1.12
-- [jQuery](https://jquery.com/): 3.6.0
-- [Semantic UI](https://semantic-ui.com/): 2.4.1
 
+## Frameworks utilizados
 
-### Testes
-`php -S localhost:8080 rotas.php`
+- [jQuery](https://jquery.com/): 3.7.1
+- [Semantic UI](https://semantic-ui.com/): 2.5.0
+
+## Testes locais
+
+Para executar o sistema localmente para fins de teste, utilize o seguinte comando:
+
+```bash
+php -S localhost:8080 rotas.php
+```
+
+Certifique-se de que todas as dependências estejam devidamente instaladas e configuradas antes de iniciar os testes.
+
+Aproveite o acesso fácil aos versículos da Bíblia e o ambiente livre de anúncios fornecido pelo projeto [Bíblia Online](http://biblia.luizamichi.com.br/)!

@@ -35,6 +35,7 @@ catch(Throwable $th) {
 	}
 	elseif(in_array($direcionador, ["", "login", "autores", "livros", "testamentos", "versoes"])) {
 		RotaController::erro();
+		exit;
 	}
 }
 

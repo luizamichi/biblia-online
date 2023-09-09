@@ -51,7 +51,7 @@ botaoMensagem.click(function() {
 // Ajusta o tamanho da fonte ao iniciar a página
 let tamanhoFonte = localStorage.getItem("fonte");
 if (tamanhoFonte) {
-	$("body").css("font-size", tamanhoFonte + "px");
+	$("p").css("font-size", tamanhoFonte + "px");
 }
 
 // Tema da página
@@ -79,19 +79,17 @@ botaoTema.click(function() {
 
 // Aumenta o tamanho da fonte da página ao clicar no botão
 botaoAumentaFonte.click(function() {
-	let tamanhoFonteAtual = parseFloat($("body").css("font-size"));
+	let tamanhoFonteAtual = parseFloat($("p").css("font-size"));
 	let novoTamanhoFonte = tamanhoFonteAtual * 1.2; // Aumenta 20%
-	console.warn(novoTamanhoFonte)
-	$("body").css("font-size", novoTamanhoFonte + "px");
+	$("p").css("font-size", novoTamanhoFonte + "px");
 	localStorage.setItem("fonte", novoTamanhoFonte);
 });
 
 // Diminui o tamanho da fonte da página ao clicar no botão
 botaoDiminuiFonte.click(function() {
-	let tamanhoFonteAtual = parseFloat($("body").css("font-size"));
+	let tamanhoFonteAtual = parseFloat($("p").css("font-size"));
 	let novoTamanhoFonte = tamanhoFonteAtual * 0.8; // Diminui 20%
-	console.warn(novoTamanhoFonte)
-	$("body").css("font-size", novoTamanhoFonte + "px");
+	$("p").css("font-size", novoTamanhoFonte + "px");
 	localStorage.setItem("fonte", novoTamanhoFonte);
 });
 

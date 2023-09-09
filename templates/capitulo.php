@@ -17,7 +17,7 @@ $capitulo ??= new Capitulo(0, [new Versiculo]);
 		<i class="bookmark icon"></i>
 		<div class="content">
 			<div class="title">
-				<a href="<?= VERSAO . $capitulo->versiculos[0]->livro->testamento->abreviado ?>"><?= $capitulo->versiculos[0]->livro->testamento->nome ?></a>
+				<a href="<?= VERSAO . "livros/" . $capitulo->versiculos[0]->livro->testamento->abreviado ?>"><?= $capitulo->versiculos[0]->livro->testamento->nome ?></a>
 			</div>
 			<div class="description"><?= $capitulo->versiculos[0]->livro->testamento->abreviado ?></div>
 		</div>
