@@ -3,10 +3,12 @@
 // Cadastra o autoload de todas as classes do sistema
 spl_autoload_register(function(string $classe): void {
 	$diretorios = ["controllers", "daos", "models"];
+
 	foreach($diretorios as $diretorio) {
 		$arquivo = __DIR__ . "/" . $diretorio . "/" . $classe . ".php";
+
 		if(file_exists($arquivo)) {
-			require_once($arquivo);
+			require_once $arquivo;
 			break;
 		}
 	}
@@ -19,6 +21,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
 	session_regenerate_id();
 }
+
 
 // Ativa a depuração de erros
 if(Configuracao::ini()::get("debug", "project")) {

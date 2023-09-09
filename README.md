@@ -1,4 +1,6 @@
 # Bíblia Online
+_[biblia.luizamichi.com.br](http://biblia.luizamichi.com.br/)_
+
 Site feito em PHP com a utilização do MySQL para armazenamento de dados.
 
 Criado para poder ter acesso fácil e rápido aos versículos da Bíblia livre de anúncios dos diversos sites na web que têm a mesma funcionalidade.
@@ -15,7 +17,11 @@ No arquivo `.htaccess` deve ser definida a URL base do sistema.
 
 
 ### Versões
-- [MySQL](https://www.mysql.com/) : 8.0.28
-- [PHP](https://www.php.net/): 8.1.2
+- [MySQL](https://www.mysql.com/): 8.0.28
+- [PHP](https://www.php.net/): 8.1.12
 - [jQuery](https://jquery.com/): 3.6.0
 - [Semantic UI](https://semantic-ui.com/): 2.4.1
+
+
+### Testes
+`php -S localhost:8080 rotas.php`

@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -10,17 +10,18 @@ require_once(__DIR__ . "/../autoload.php");
 class Biblia {
 	/**
 	 * @var Versao $versao
-	 * @var array[Livro] $livros
+	 * @var array<Livro> $livros
 	 */
 	private Versao $versao;
 	private array $livros;
 
+
 	/**
-	 * @param Versao $versao
-	 * @param array[Livro] $livros
+	 * @param ?Versao $versao
+	 * @param array<Livro> $livros
 	 * @return void
 	 */
-	public function __construct(Versao $versao=null, array $livros=[]) {
+	public function __construct(?Versao $versao=null, array $livros=[]) {
 		$this->versao = $versao ?? (new Versao);
 		$this->livros = $livros;
 	}
@@ -28,7 +29,7 @@ class Biblia {
 
 	/**
 	 * @param string $atributo
-	 * @param array[Livro]|Versao $valor
+	 * @param array<Livro>|Versao $valor
 	 * @return void
 	 */
 	public function __set(string $atributo, array|Versao $valor): void {
@@ -40,7 +41,7 @@ class Biblia {
 
 	/**
 	 * @param string $atributo
-	 * @return ?array|?Versao
+	 * @return array<Livro>|null|Versao
 	 */
 	public function __get(string $atributo): array|null|Versao {
 		return $this->$atributo ?? null;

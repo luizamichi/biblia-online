@@ -1,5 +1,6 @@
 <?php
 
+$titulo ??= "Bíblia Online";
 $versiculoAleatorio ??= new Versiculo;
 $versiculoDiario ??= new Versiculo;
 $versiculoSemanal ??= new Versiculo;

@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -63,7 +63,7 @@ class LivroDAO extends DAO {
 	/**
 	 * @static
 	 * @param int $autor
-	 * @return array
+	 * @return array<Livro>
 	 */
 	public static function autor(int $autor): array {
 		$consulta = "SELECT `livro_id`, `livro_testamento_id`, `livro_nome`, `livro_abreviado`, `livro_posicao`, `livro_sobre`, `livro_capitulos` FROM `livros` INNER JOIN `autores_livros` ON `livro_id` = `autores_livros_livro_id` WHERE `autores_livros_autor_id` = :autores_livros_autor_id;";
@@ -80,7 +80,7 @@ class LivroDAO extends DAO {
 	/**
 	 * @static
 	 * @param int $testamento
-	 * @return array
+	 * @return array<Livro>
 	 */
 	public static function testamento(int $testamento): array {
 		$consulta = "SELECT `livro_id`, `livro_testamento_id`, `livro_nome`, `livro_abreviado`, `livro_posicao`, `livro_sobre`, `livro_capitulos` FROM `livros` WHERE `livro_testamento_id` = :livro_testamento_id;";
@@ -96,7 +96,7 @@ class LivroDAO extends DAO {
 
 	/**
 	 * @static
-	 * @return array
+	 * @return array<Livro>
 	 */
 	public static function all(): array {
 		$consulta = "SELECT `livro_id`, `livro_testamento_id`, `livro_nome`, `livro_abreviado`, `livro_posicao`, `livro_sobre`, `livro_capitulos` FROM `livros`;";
@@ -134,7 +134,7 @@ class LivroDAO extends DAO {
 		$parametros = [
 			[":livro_nome", $livro->nome, PDO::PARAM_STR],
 			[":livro_abreviado", $livro->abreviado, PDO::PARAM_STR],
-			[":livro_posicao", $livro->abreviado, PDO::PARAM_INT],
+			[":livro_posicao", $livro->posicao, PDO::PARAM_INT],
 			[":livro_sobre", $livro->sobre, PDO::PARAM_STR],
 			[":livro_capitulos", $livro->capitulos, PDO::PARAM_INT],
 			[":livro_id", $livro->chave, PDO::PARAM_INT]
@@ -146,7 +146,7 @@ class LivroDAO extends DAO {
 
 	/**
 	 * @static
-	 * @param int
+	 * @param int $chave
 	 * @return bool
 	 */
 	public static function delete(int $chave): bool {

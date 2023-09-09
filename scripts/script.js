@@ -47,8 +47,14 @@ botaoMensagem.click(function() {
 	divisaoMensagem.hide();
 });
 
-// Tamanho da fonte e tema da página
-let tamanhoFonte = localStorage.getItem("fonte") !== null ? parseInt(localStorage.getItem("fonte")) : 0;
+
+// Ajusta o tamanho da fonte ao iniciar a página
+let tamanhoFonte = localStorage.getItem("fonte");
+if (tamanhoFonte) {
+	$("body").css("font-size", tamanhoFonte + "px");
+}
+
+// Tema da página
 if(localStorage.getItem("tema") !== null && localStorage.getItem("tema") === "escuro") {
 	$("link[id='tema-escuro']").attr("disabled", false);
 	$("button").addClass("inverted");
@@ -73,32 +79,24 @@ botaoTema.click(function() {
 
 // Aumenta o tamanho da fonte da página ao clicar no botão
 botaoAumentaFonte.click(function() {
-	$("a, h1, h2, p, small").each(function() {
-		let fonte = parseInt($(this).css("font-size"));
-		$(this).css("font-size", fonte + 2);
-	});
-	localStorage.setItem("fonte", tamanhoFonte + 1);
-	tamanhoFonte += 1;
+	let tamanhoFonteAtual = parseFloat($("body").css("font-size"));
+	let novoTamanhoFonte = tamanhoFonteAtual * 1.2; // Aumenta 20%
+	console.warn(novoTamanhoFonte)
+	$("body").css("font-size", novoTamanhoFonte + "px");
+	localStorage.setItem("fonte", novoTamanhoFonte);
 });
 
 // Diminui o tamanho da fonte da página ao clicar no botão
 botaoDiminuiFonte.click(function() {
-	$("a, h1, h2, p, small").each(function() {
-		let fonte = parseInt($(this).css("font-size"));
-		$(this).css("font-size", fonte - 2);
-	});
-	localStorage.setItem("fonte", tamanhoFonte - 1);
-	tamanhoFonte -= 1;
+	let tamanhoFonteAtual = parseFloat($("body").css("font-size"));
+	let novoTamanhoFonte = tamanhoFonteAtual * 0.8; // Diminui 20%
+	console.warn(novoTamanhoFonte)
+	$("body").css("font-size", novoTamanhoFonte + "px");
+	localStorage.setItem("fonte", novoTamanhoFonte);
 });
 
 // Habilita o menu suspenso
 $(".dropdown.ui").dropdown();
-
-// Aumenta ou diminui tamanho da fonte ao iniciar a página
-$("div, h1, h2, p, small").each(function() {
-	let fonte = parseInt($(this).css("font-size"));
-	$(this).css("font-size", fonte + (2 * tamanhoFonte));
-});
 
 // Desabilita o botão de salvar a modificação e a caixa de mensagem
 botaoSalvar.attr("disabled", true);
@@ -139,7 +137,7 @@ botaoSalvar.click(function(evento) {
 	if(formularioAlteracao.length !== 0) {
 		if(caixaSelecao.is(":checked")) {
 			let sucesso = false;
-	
+
 			$.ajax({
 				type: "url",
 				method: "post",
@@ -173,7 +171,7 @@ botaoSalvar.click(function(evento) {
 					divisaoMensagem.addClass("red").removeClass("blue green yellow");
 					iconeMensagem.addClass("times").removeClass("exclamation info paper plane shield alternate search");
 					divisaoMensagem.find("span[id='cabecalho-alerta']").text(tituloPagina.text() + " não pode ser modificado(a).");
-					divisaoMensagem.children("p[id='texto-alerta']").text(response.responseJSON !== undefined && response.responseJSON.mensagem || "Houve uma falha ao realizar a modificação.");
+					divisaoMensagem.children("p[id='texto-alerta']").text(response?.responseJSON && response.responseJSON.mensagem || "Houve uma falha ao realizar a modificação.");
 				}
 			});
 			return sucesso;
@@ -228,7 +226,7 @@ let enviaPesquisa = function(evento) {
 				divisaoMensagem.addClass("red").removeClass("blue green yellow");
 				iconeMensagem.addClass("times").removeClass("exclamation info paper plane shield alternate search");
 				divisaoMensagem.find("span[id='cabecalho-alerta']").text("Não foi possível fazer a pesquisa.");
-				divisaoMensagem.children("p[id='texto-alerta']").text(response.responseJSON !== undefined && response.responseJSON.mensagem || "Houve uma falha ao realizar a consulta.");
+				divisaoMensagem.children("p[id='texto-alerta']").text(response?.responseJSON && response.responseJSON.mensagem || "Houve uma falha ao realizar a consulta.");
 			}
 		});
 	}
@@ -296,13 +294,13 @@ botaoLogar.click(function() {
 				divisaoMensagem.addClass("red").removeClass("blue green yellow");
 				iconeMensagem.addClass("times").removeClass("exclamation info paper plane shield alternate search");
 				divisaoMensagem.find("span[id='cabecalho-alerta']").text("Não foi possível fazer a autenticação.");
-				divisaoMensagem.children("p[id='texto-alerta']").text(response.responseJSON !== undefined && response.responseJSON.mensagem || "Houve uma falha ao realizar a autenticação.");
+				divisaoMensagem.children("p[id='texto-alerta']").text(response?.responseJSON && response.responseJSON.mensagem || "Houve uma falha ao realizar a autenticação.");
 			}
 		});
 	}
 });
 
-// Desutentica o usuário
+// Desautentica o usuário
 botaoDesautenticar.click(function() {
 	if(formularioAutenticacao.length !== 0) {
 		entradaLogout.val("1");
@@ -338,7 +336,7 @@ botaoDesautenticar.click(function() {
 				divisaoMensagem.addClass("red").removeClass("blue green yellow");
 				iconeMensagem.addClass("times").removeClass("exclamation info paper plane shield alternate search");
 				divisaoMensagem.find("span[id='cabecalho-alerta']").text("Não foi possível fazer a desautenticação.");
-				divisaoMensagem.children("p[id='texto-alerta']").text(response.responseJSON !== undefined && response.responseJSON.mensagem || "Houve uma falha ao realizar a desautenticação.");
+				divisaoMensagem.children("p[id='texto-alerta']").text(response?.responseJSON && response.responseJSON.mensagem || "Houve uma falha ao realizar a desautenticação.");
 			}
 		});
 	}

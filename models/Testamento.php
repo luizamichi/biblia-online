@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -16,6 +16,7 @@ class Testamento extends Modelo {
 	private int $chave;
 	private string $nome;
 	private string $abreviado;
+
 
 	/**
 	 * @var bool TABELA
@@ -51,7 +52,7 @@ class Testamento extends Modelo {
 
 	/**
 	 * @param string $atributo
-	 * @return array|?int|?string
+	 * @return array|int|null|string
 	 */
 	public function __get(string $atributo): array|int|null|string {
 		return $this->$atributo ?? null;

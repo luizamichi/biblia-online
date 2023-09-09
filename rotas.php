@@ -1,19 +1,47 @@
 <?php
 
-require_once(__DIR__ . "/autoload.php");
+require_once __DIR__ . "/autoload.php";
 
 $requisicao = strtok($_SERVER["REQUEST_URI"] ?? "", "?");
 $parametros = array_values(array_filter(explode("/", $requisicao)));
 $direcionador = $parametros[0] ?? "";
 
-$autores = Sessao::autores();
-$livros = Sessao::livros();
-$versoes = Sessao::versoes();
-
 // Versão padrão
 $versao = "NVI";
 $capitulo = 0;
 $versiculo = 0;
+
+// Carrega os arquivos estáticos antes de tentar se comunicar com o banco de dados
+$arquivo = __DIR__ . $requisicao;
+if(is_file($arquivo) && !in_array(substr($requisicao, 1), Configuracao::ini()::get("restrict"))) {
+	RotaController::files($arquivo);
+	exit;
+}
+
+try {
+	Conexao::get();
+}
+catch(Throwable $th) {
+	http_response_code(500);
+
+	if($direcionador === "api") {
+		header("Content-Type: application/json");
+		exit(json_encode([
+			"resultado" => null,
+			"mensagem" => $th->getMessage(),
+			"erro" => ErroController::last(),
+			"sucesso" => false
+		]));
+	}
+	elseif(in_array($direcionador, ["", "login", "autores", "livros", "testamentos", "versoes"])) {
+		RotaController::erro();
+	}
+}
+
+// Carrega os valores da sessão (para evitar consulta ao banco de dados)
+$autores = Sessao::autores();
+$livros = Sessao::livros();
+$versoes = Sessao::versoes();
 
 // Foi informada a versão desejada
 if(in_array(strtoupper($parametros[0] ?? ""), $versoes)) {
@@ -60,11 +88,7 @@ switch($direcionador) {
 			}
 		}
 		else {
-			$arquivo = __DIR__ . $requisicao;
-			if(file_exists($arquivo) && is_file($arquivo) && !in_array(substr($requisicao, 1), Configuracao::ini()::get("restrict"))) {
-				RotaController::files($arquivo);
-			}
-			elseif(Operador::logged()) {
+			if(Operador::logged()) {
 				RotaController::versao($versao);
 			}
 			else {

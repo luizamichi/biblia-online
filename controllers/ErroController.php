@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -16,12 +16,28 @@ class ErroController {
 		$configuracao = Configuracao::ini();
 
 		if(!empty($erros) && !$configuracao::get("debug", "project")) {
-			$configuracao::set("message", $erros["message"], "error");
+			$configuracao::set("message", "\"" . $erros["message"] . "\"", "error");
 			$configuracao::set("type", $erros["type"], "error");
 			$configuracao::set("line", $erros["line"], "error");
 			$configuracao::set("file", $erros["file"], "error");
 			$configuracao->save();
 		}
+
 		return $erros;
+	}
+
+
+	/**
+	 * @static
+	 * @param Throwable $th
+	 * @return array
+	 */
+	public static function current(Throwable $th): array {
+		return [
+			"message" => $th->getMessage(),
+			"type" => $th->getCode(),
+			"line" => $th->getLine(),
+			"file" => $th->getFile()
+		];
 	}
 }

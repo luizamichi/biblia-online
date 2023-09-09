@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -32,11 +32,11 @@ class DAO {
 	 * @param string $consulta
 	 * @param array $parametros
 	 * @param bool $unique
-	 * @return array|object
+	 * @return array|null|object
 	 */
-	private static function query(string $consulta, array $parametros, bool $unique): array|bool|object {
+	private static function query(string $consulta, array $parametros, bool $unique): array|null|object {
 		$stmt = self::map($consulta, $parametros);
-		return $unique ? $stmt->fetch() : $stmt->fetchAll();
+		return $unique ? ($stmt->rowCount() ? $stmt->fetch() : null) : $stmt->fetchAll();
 	}
 
 
@@ -60,6 +60,7 @@ class DAO {
 	 */
 	public static function postAll(string $consulta, array $parametros=[]): bool {
 		$response = false;
+
 		foreach(explode(";", $consulta) as $subconsulta) {
 			if(is_array(current($parametros))) {
 				$stmt = self::map($subconsulta, current($parametros));
@@ -67,6 +68,7 @@ class DAO {
 				next($parametros);
 			}
 		}
+
 		return $response;
 	}
 
@@ -75,11 +77,12 @@ class DAO {
 	 * @static
 	 * @param string $consulta
 	 * @param array $parametros
-	 * @param ?callback $funcao
+	 * @param ?callable $funcao
 	 * @return ?object
 	 */
-	public static function fetch(string $consulta, array $parametros=[], callable $funcao=null): ?object {
+	public static function fetch(string $consulta, array $parametros=[], ?callable $funcao=null): ?object {
 		$resultado = self::query($consulta, $parametros, true);
+
 		if($resultado) {
 			return $funcao ? $funcao($resultado) : $resultado;
 		}
@@ -96,8 +99,9 @@ class DAO {
 	 * @param ?callable $funcao
 	 * @return array
 	 */
-	public static function fetchAll(string $consulta, array $parametros=[], callable $funcao=null): array {
+	public static function fetchAll(string $consulta, array $parametros=[], ?callable $funcao=null): array {
 		$resultado = self::query($consulta, $parametros, false);
+
 		if($resultado) {
 			return $funcao ? array_map($funcao, $resultado) : $resultado;
 		}

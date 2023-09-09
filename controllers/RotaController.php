@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -12,7 +12,7 @@ class RotaController {
 	 * @return void
 	 */
 	public static function api(): void {
-		require_once(__DIR__ . "/../api.php");
+		require_once __DIR__ . "/../api.php";
 	}
 
 
@@ -21,7 +21,7 @@ class RotaController {
 	 * @return void
 	 */
 	public static function login(): void {
-		require_once(__DIR__ . "/../login.php");
+		require_once __DIR__ . "/../login.php";
 	}
 
 
@@ -55,7 +55,8 @@ class RotaController {
 	 */
 	public static function autor(string $apelido): void {
 		$autor = AutorDAO::apelido($apelido);
-		$livros = LivroDAO::autor($autor->chave);
+		$livros = LivroDAO::autor($autor?->chave);
+
 		$template = new Template("autor");
 		$template->autor = $autor;
 		$template->livros = $livros;
@@ -69,6 +70,7 @@ class RotaController {
 	 */
 	public static function autores(): void {
 		$autores = AutorDAO::all();
+
 		$template = new Template("autores");
 		$template->autores = $autores;
 		$template->body();
@@ -82,7 +84,8 @@ class RotaController {
 	 */
 	public static function livro(string $nome): void {
 		$livro = LivroDAO::abreviado($nome);
-		$autores = AutorDAO::livro($livro->chave);
+		$autores = AutorDAO::livro($livro?->chave);
+
 		$template = new Template("livro");
 		$template->livro = $livro;
 		$template->autores = $autores;
@@ -97,6 +100,7 @@ class RotaController {
 	 */
 	public static function livros(string $testamento=""): bool {
 		$testamento = strtoupper($testamento);
+
 		if(in_array($testamento, Sessao::testamentos())) {
 			$testamento = TestamentoDAO::abreviado($testamento);
 			self::testamento($testamento);
@@ -109,6 +113,7 @@ class RotaController {
 		$template = new Template("livros");
 		$template->livros = $livros;
 		$template->body();
+
 		return true;
 	}
 
@@ -122,6 +127,7 @@ class RotaController {
 	 */
 	public static function capitulo(string $nome, string $versao, int $capitulo): void {
 		$capitulo = CapituloDAO::numeroLivroVersao($capitulo, $nome, $versao);
+
 		$template = new Template("capitulo");
 		$template->capitulo = $capitulo;
 		$template->body();
@@ -158,6 +164,7 @@ class RotaController {
 	 */
 	public static function testamento(Testamento $testamento): void {
 		$livros = LivroDAO::testamento($testamento->chave);
+
 		$template = new Template("testamento");
 		$template->testamento = $testamento;
 		$template->livros = $livros;
@@ -171,6 +178,7 @@ class RotaController {
 	 */
 	public static function testamentos(): void {
 		$testamentos = TestamentoDAO::all();
+
 		$template = new Template("testamentos");
 		$template->testamentos = $testamentos;
 		$template->body();
@@ -184,6 +192,7 @@ class RotaController {
 	 */
 	public static function versao(string $abreviado): void {
 		$versao = VersaoDAO::abreviado($abreviado);
+
 		$template = new Template("versao");
 		$template->versao = $versao;
 		$template->body();
@@ -196,9 +205,20 @@ class RotaController {
 	 */
 	public static function versoes(): void {
 		$versoes = VersaoDAO::all();
+
 		$template = new Template("versoes");
 		$template->versoes = $versoes;
 		$template->body();
+	}
+
+
+	/**
+	 * @static
+	 * @return void
+	 */
+	public static function erro(): void {
+		$template = new Template("erro");
+		$template->body2();
 	}
 
 
@@ -223,6 +243,7 @@ class RotaController {
 				header("Content-Type: text/plain");
 				break;
 		}
-		require_once($arquivo);
+
+		require_once $arquivo;
 	}
 }

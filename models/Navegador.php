@@ -14,6 +14,7 @@ class Navegador {
 	private string $anterior;
 	private string $proximo;
 
+
 	/**
 	 * @param int $atual
 	 * @param string $anterior
@@ -41,7 +42,7 @@ class Navegador {
 
 	/**
 	 * @param string $atributo
-	 * @return ?int|?string
+	 * @return int|null|string
 	 */
 	public function __get(string $atributo): int|null|string {
 		return $this->$atributo ?? null;

@@ -29,13 +29,26 @@ class Template {
 	 */
 	public function body(): void {
 		${"operador"} = new Operador();
-		require_once(__DIR__ . "/../templates/cabecalho.php");
-		require_once(__DIR__ . "/../templates/menu.php");
-		require_once(__DIR__ . "/../templates/alerta.php");
+		require_once __DIR__ . "/../templates/cabecalho.php";
+		require_once __DIR__ . "/../templates/menu.php";
+		require_once __DIR__ . "/../templates/alerta.php";
 
 		$this->html();
-		require_once(__DIR__ . "/../templates/login.html");
-		require_once(__DIR__ . "/../templates/rodape.html");
+
+		require_once __DIR__ . "/../templates/login.html";
+		require_once __DIR__ . "/../templates/rodape.html";
+	}
+
+
+	/**
+	 * @return void
+	 */
+	public function body2(): void {
+		require_once __DIR__ . "/../templates/cabecalho.php";
+
+		$this->html();
+
+		require_once __DIR__ . "/../templates/rodape.html";
 	}
 
 
@@ -46,8 +59,12 @@ class Template {
 		foreach($this->variaveis as $chave => $valor) {
 			${$chave} = $valor;
 		}
+
 		if(file_exists(__DIR__ . "/../templates/" . $this->arquivo . ".php")) {
-			require_once(__DIR__ . "/../templates/" . $this->arquivo . ".php");
+			require_once __DIR__ . "/../templates/" . $this->arquivo . ".php";
+		}
+		elseif(file_exists(__DIR__ . "/../templates/" . $this->arquivo . ".html")) {
+			require_once __DIR__ . "/../templates/" . $this->arquivo . ".html";
 		}
 	}
 

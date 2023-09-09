@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -60,7 +60,7 @@ class AutorDAO extends DAO {
 	/**
 	 * @static
 	 * @param int $livro
-	 * @return array
+	 * @return array<Autor>
 	 */
 	public static function livro(int $livro): array {
 		$consulta = "SELECT `autor_id`, `autor_nome`, `autor_apelido`, `autor_sobre` FROM `autores` INNER JOIN `autores_livros` ON `autor_id` = `autores_livros_autor_id` WHERE `autores_livros_livro_id` = :autores_livros_livro_id;";
@@ -76,7 +76,7 @@ class AutorDAO extends DAO {
 
 	/**
 	 * @static
-	 * @return array
+	 * @return array<Autor>
 	 */
 	public static function all(): array {
 		$consulta = "SELECT `autor_id`, `autor_nome`, `autor_apelido`, `autor_sobre` FROM `autores`;";

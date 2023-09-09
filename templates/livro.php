@@ -11,7 +11,7 @@ $autores ??= [];
 		<i class="bookmark icon"></i>
 		<div class="content">
 			<div class="title">
-				<a href="<?= VERSAO . $livro->testamento->abreviado ?>"><?= $livro->testamento->nome ?></a>
+				<a href="<?= VERSAO . "livros/" . $livro->testamento->abreviado ?>"><?= $livro->testamento->nome ?></a>
 			</div>
 			<div class="description"><?= $livro->testamento->abreviado ?></div>
 		</div>

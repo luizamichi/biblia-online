@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -75,7 +75,7 @@ class TestamentoDAO extends DAO {
 
 	/**
 	 * @static
-	 * @return array
+	 * @return array<Testamento>
 	 */
 	public static function all(): array {
 		$consulta = "SELECT `testamento_id`, `testamento_nome`, `testamento_abreviado` FROM `testamentos`;";
@@ -120,7 +120,7 @@ class TestamentoDAO extends DAO {
 
 	/**
 	 * @static
-	 * @param int
+	 * @param int $chave
 	 * @return bool
 	 */
 	public static function delete(int $chave): bool {

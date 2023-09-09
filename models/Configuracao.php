@@ -5,8 +5,8 @@
  */
 class Configuracao {
 	/**
-	 * @staticvar string $arquivo
-	 * @staticvar array $conteudo
+	 * @var string $arquivo
+	 * @var array<string,array<string,string>> $conteudo
 	 */
 	private static string $arquivo;
 	public static array $conteudo;
@@ -18,6 +18,7 @@ class Configuracao {
 	 */
 	public function __construct(string $arquivo="") {
 		self::$arquivo = $arquivo;
+
 		if(file_exists($arquivo) && empty(self::$conteudo)) {
 			self::$conteudo = parse_ini_file($arquivo, true, INI_SCANNER_TYPED);
 		}
@@ -54,6 +55,7 @@ class Configuracao {
 		if(empty(self::$conteudo) && file_exists(self::$arquivo)) {
 			self::$conteudo = parse_ini_file(self::$arquivo, true, INI_SCANNER_TYPED);
 		}
+
 		return self::$conteudo[$sessao][$atributo] ?? self::$conteudo[$atributo] ?? null;
 	}
 
@@ -65,6 +67,7 @@ class Configuracao {
 	 */
 	private static function recursive(array $conteudo): string {
 		$texto = "";
+
 		foreach($conteudo as $variavel => $valor) {
 			if(is_array($valor)) {
 				$texto .= "[" . $variavel . "]" . PHP_EOL . self::recursive($valor) . (end($conteudo) !== $valor ? PHP_EOL : "");
@@ -76,6 +79,7 @@ class Configuracao {
 				$texto .= $variavel . " = " . $valor . PHP_EOL;
 			}
 		}
+
 		return $texto;
 	}
 
@@ -101,6 +105,7 @@ class Configuracao {
 			fclose($fd);
 			return true;
 		}
+
 		return false;
 	}
 
@@ -110,7 +115,7 @@ class Configuracao {
 	 * @param string $arquivo
 	 * @return self
 	 */
-	public static function ini($arquivo=__DIR__ . "/../biblia.ini"): self {
+	public static function ini(string $arquivo=__DIR__ . "/../biblia.ini"): self {
 		return new self($arquivo);
 	}
 

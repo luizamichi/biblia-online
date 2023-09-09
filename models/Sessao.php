@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -30,7 +30,7 @@ class Sessao {
 
 	/**
 	 * @static
-	 * @return array
+	 * @return array<Autor>
 	 */
 	public static function autores(): array {
 		if(!isset($_SESSION["autores"]) || empty($_SESSION["autores"])) {
@@ -38,13 +38,14 @@ class Sessao {
 				return strtoupper($autor->apelido);
 			}, AutorDAO::all());
 		}
+
 		return $_SESSION["autores"] ?? [];
 	}
 
 
 	/**
 	 * @static
-	 * @return array
+	 * @return array<Livro>
 	 */
 	public static function livros(): array {
 		if(!isset($_SESSION["livros"]) || empty($_SESSION["livros"])) {
@@ -52,13 +53,14 @@ class Sessao {
 				return strtoupper($livro->abreviado);
 			}, LivroDAO::all());
 		}
+
 		return $_SESSION["livros"] ?? [];
 	}
 
 
 	/**
 	 * @static
-	 * @return array
+	 * @return array<Testamento>
 	 */
 	public static function testamentos(): array {
 		if(!isset($_SESSION["testamentos"]) || empty($_SESSION["testamentos"])) {
@@ -66,13 +68,14 @@ class Sessao {
 				return strtoupper($testamento->abreviado);
 			}, TestamentoDAO::all());
 		}
+
 		return $_SESSION["testamentos"] ?? [];
 	}
 
 
 	/**
 	 * @static
-	 * @return array
+	 * @return array<Versao>
 	 */
 	public static function versoes(): array {
 		if(!isset($_SESSION["versoes"]) || empty($_SESSION["versoes"])) {
@@ -80,6 +83,7 @@ class Sessao {
 				return strtoupper($versao->abreviado);
 			}, VersaoDAO::all());
 		}
+
 		return $_SESSION["versoes"] ?? [];
 	}
 }

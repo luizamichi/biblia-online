@@ -4,13 +4,13 @@
  * Procedimento genérico para consulta e alteração de dados
  * @api
  */
-require_once(__DIR__ . "/autoload.php");
+require_once __DIR__ . "/autoload.php";
 header("Content-Type: application/json");
 
 $configuracao = Configuracao::ini();
 $request = $_SERVER["REQUEST_METHOD"] ?? "GET";
 
-// O metódo recebido é GET
+// O método recebido é GET
 if($request === "GET") {
 	// Não é possível realizar SELECT no banco (parâmetro READ da sessão CRUD)
 	if(!$configuracao::get("read", "crud")) {
@@ -23,18 +23,28 @@ if($request === "GET") {
 		]));
 	}
 
-	$classe = ucfirst(filter_input(INPUT_GET, "classe", FILTER_DEFAULT, FILTER_UNSAFE_RAW));
-	$campo = filter_input(INPUT_GET, "campo", FILTER_DEFAULT, FILTER_UNSAFE_RAW);
+	$classe = ucfirst((string) filter_input(INPUT_GET, "classe", FILTER_DEFAULT, FILTER_UNSAFE_RAW));
+	$campo = (string) filter_input(INPUT_GET, "campo", FILTER_DEFAULT, FILTER_UNSAFE_RAW);
 	$consulta = filter_input(INPUT_GET, "consulta", FILTER_DEFAULT, FILTER_UNSAFE_RAW);
 	$argumentos = filter_input(INPUT_GET, "consulta", FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
 
 	// Faz um match da consulta -> parâmetro de consulta, campo -> função da classe DAO
 	if(method_exists($classe . "DAO", $campo)) {
-		$resultado = is_array($argumentos)
-		? call_user_func_array($classe . "DAO::" . $campo, $argumentos)
-		: call_user_func($classe . "DAO::" . $campo, $consulta);
+		try {
+			$resultado = is_array($argumentos)
+				? call_user_func_array($classe . "DAO::" . $campo, $argumentos)
+				: call_user_func($classe . "DAO::" . $campo, $consulta);
+		}
+		catch(Throwable $th) {
+			exit(json_encode([
+				"resultado" => null,
+				"mensagem" => "A requisição está parcialmente correta.",
+				"erro" => ErroController::current($th),
+				"sucesso" => false
+			]));
+		}
 
-		$contem = ($resultado->chave ?? $resultado->numero ?? is_array($resultado) && count($resultado) ?? 0) > 0;
+		$contem = ($resultado->chave ?? $resultado->numero ?? (is_array($resultado) && count($resultado) ?: 0)) > 0;
 		if($contem) {
 			$resultado = is_array($resultado)
 				? array_map(function(mixed $tupla): array {
@@ -67,7 +77,7 @@ if($request === "GET") {
 }
 
 
-// O metódo recebido é POST
+// O método recebido é POST
 elseif($request === "POST") {
 	if(!$configuracao::get("update", "crud")) {
 		http_response_code(403);
@@ -78,6 +88,7 @@ elseif($request === "POST") {
 			"sucesso" => false
 		]));
 	}
+
 	// O usuário não está autenticado
 	elseif(!Operador::logged()) {
 		http_response_code(401);
@@ -89,7 +100,7 @@ elseif($request === "POST") {
 		]));
 	}
 
-	$classe = ucfirst(filter_input(INPUT_POST, "classe", FILTER_UNSAFE_RAW));
+	$classe = ucfirst((string) filter_input(INPUT_POST, "classe", FILTER_UNSAFE_RAW));
 
 	// Verifica se a classe informada está correta
 	if(!empty($classe) && class_exists($classe . "DAO") && method_exists($classe . "DAO", "update")) {
@@ -101,7 +112,7 @@ elseif($request === "POST") {
 		$erros = [];
 
 		$valores = [];
-		$vetor = array_filter(array_map(function(string $indice) use (&$valores): string {
+		$vetor = array_filter(array_map(function(string $indice) use(&$valores): string {
 			$token = strpos($indice, "->");
 			if($token !== false) {
 				$valores[] = substr($indice, 0, $token);
@@ -112,7 +123,7 @@ elseif($request === "POST") {
 		$valores = array_unique($valores);
 
 		// Passa os valores do vetor POST para a classe
-		array_map(function(string $chave) use ($objeto, &$erros, $valores, $vetor): void {
+		array_map(function(string $chave) use($objeto, &$erros, $valores, $vetor): void {
 			if(!is_array($objeto->$chave)) {
 				try {
 					if(is_object($objeto->$chave)) {
@@ -124,10 +135,10 @@ elseif($request === "POST") {
 					}
 
 					if(!isset($_POST[$chave])) {
-						throw new ValueError("É necessário informar a chave '" . $chave . "'");
+						throw new ValueError("É necessário informar a chave '" . $chave . "'.");
 					}
 				}
-				catch(Throwable $th) {
+				catch(Throwable $_) {
 					$erros[] = $chave;
 				}
 			}
@@ -137,12 +148,12 @@ elseif($request === "POST") {
 				$subclasse = ucfirst(substr($orientador, 0, -1));
 
 				for($k = 0; $k < count($_POST[$orientador . "->" . array_values($vetor)[0]]); $k++) {
-					$parametros = array_map(function(string $parametro) use ($orientador, $k): mixed {
+					$parametros = array_map(function(string $parametro) use($orientador, $k): mixed {
 						$instanciador = ucfirst($parametro);
 						$valor = $_POST[$orientador . "->" . $parametro][$k];
 						return class_exists($instanciador) && defined($instanciador . "::TABELA")
-						? new $instanciador($valor)
-						: $valor;
+							? new $instanciador($valor)
+							: $valor;
 					}, $vetor);
 					$resultado[] = new $subclasse(...$parametros);
 				}
@@ -179,6 +190,7 @@ elseif($request === "POST") {
 			"sucesso" => false
 		]));
 	}
+
 	// Não foi informado o nome da classe na requisição
 	else {
 		http_response_code(400);
@@ -197,7 +209,7 @@ else {
 	http_response_code(405);
 	exit(json_encode([
 		"resultado" => null,
-		"mensagem" => "O metódo necessário para o envio deve ser GET ou POST. " . $request . " não é permitido.",
+		"mensagem" => "O método necessário para o envio deve ser GET ou POST. " . $request . " não é permitido.",
 		"erro" => ErroController::last(),
 		"sucesso" => false
 	]));

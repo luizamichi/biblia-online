@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -9,14 +9,15 @@ require_once(__DIR__ . "/../autoload.php");
 class Capitulo extends Modelo {
 	/**
 	 * @var int $numero
-	 * @var array[Versiculo] $versiculos
+	 * @var array<Versiculo> $versiculos
 	 */
 	private int $numero;
 	private array $versiculos;
 
+
 	/**
 	 * @param int $numero
-	 * @param array[Versiculo] $versiculos
+	 * @param array<Versiculo> $versiculos
 	 * @return void
 	 */
 	public function __construct(int $numero=0, array $versiculos=[]) {
@@ -29,7 +30,7 @@ class Capitulo extends Modelo {
 
 	/**
 	 * @param string $atributo
-	 * @param array[Versiculo]|int $valor
+	 * @param array<Versiculo>|int $valor
 	 * @return void
 	 */
 	public function __set(string $atributo, array|int $valor): void {
@@ -41,7 +42,7 @@ class Capitulo extends Modelo {
 
 	/**
 	 * @param string $atributo
-	 * @return ?array[Versiculo]|?int
+	 * @return array<Versiculo>|int|null
 	 */
 	public function __get(string $atributo): array|int|null {
 		return $this->$atributo ?? null;

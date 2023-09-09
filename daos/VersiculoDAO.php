@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -47,7 +47,7 @@ class VersiculoDAO extends DAO {
 	 * @param int $versao
 	 * @param int $livro
 	 * @param int $capitulo
-	 * @return array
+	 * @return array<Versiculo>
 	 */
 	public static function versaoLivroCapitulo(int $versao, int $livro, int $capitulo): array {
 		$consulta = "SELECT `versiculo_id`, `versiculo_versao_id`, `versiculo_livro_id`, `versiculo_capitulo`, `versiculo_numero`, `versiculo_texto` FROM `versiculos` WHERE `versiculo_versao_id` = :versiculo_versao_id AND `versiculo_livro_id` = :versiculo_livro_id AND `versiculo_capitulo` = :versiculo_capitulo;";
@@ -118,7 +118,7 @@ class VersiculoDAO extends DAO {
 
 	/**
 	 * @static
-	 * @param int
+	 * @param int $chave
 	 * @return bool
 	 */
 	public static function delete(int $chave): bool {

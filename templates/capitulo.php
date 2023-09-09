@@ -36,7 +36,7 @@ $capitulo ??= new Capitulo(0, [new Versiculo]);
 <div class="attached message ui">
 	<h3 class="aligned center header icon ui">
 		<i class="align circular icon justify"></i>
-		<div data-title="<?= $capitulo->versiculos[0]->livro->nome . " " . $capitulo->numero ?>" id="titulo">Capítulo</div>
+		<div data-title="<?= $capitulo->versiculos[0]->livro->nome . " - " . $capitulo->numero ?>" id="titulo">Capítulo</div>
 		<small><?= $capitulo->numero ?></small>
 	</h3>
 </div>

@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -9,24 +9,11 @@ require_once(__DIR__ . "/../autoload.php");
 class Conexao extends PDO {
 	/**
 	 * @var int $id
-	 * @var string $driver
-	 * @var string $host
-	 * @var string $schema
-	 * @var string $username
-	 * @var string $password
-	 * @var int $port
-	 * @var array $options
-	 * @staticvar array $databases
+	 * @var array<self> $databases
 	 */
 	private int $id;
-	private string $driver;
-	private string $host;
-	private string $schema;
-	private string $username;
-	private string $password;
-	private int $port;
-	private array $options;
 	private static array $databases;
+
 
 	/**
 	 * @param string $driver
@@ -38,7 +25,15 @@ class Conexao extends PDO {
 	 * @param array $options
 	 * @return void
 	 */
-	public function __construct(string $driver="mysql", string $host="", string $schema="", string $username="", string $password="", int $port=3306, array $options=[PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]) {
+	public function __construct(
+		private string $driver="mysql",
+		private string $host="",
+		private string $schema="",
+		private string $username="",
+		private string $password="",
+		private int $port=3306,
+		private array $options=[PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+	) {
 		$this->driver = $driver;
 		$this->host = $host;
 		$this->schema = $schema;
@@ -50,15 +45,12 @@ class Conexao extends PDO {
 
 		$dns = $this->driver . ":host=" . $this->host . ";port=" . $this->port . ";dbname=" . $this->schema;
 		try {
-			parent::__construct($dns, $username, $password, $options);
+			parent::__construct($dns, $this->username, $this->password, $this->options);
 			self::$databases[] = $this;
 			$this->id = count(self::$databases);
 		}
-		catch(PDOException $e) {
-			if(Configuracao::ini()::get("debug", "project")) {
-				debug_print_backtrace();
-			}
-			throw new PDOException("Não foi possível conectar na base de dados");
+		catch(PDOException $_) {
+			throw new PDOException("Não foi possível conectar na base de dados.");
 		}
 	}
 

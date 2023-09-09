@@ -12,6 +12,7 @@ $configuracao ??= Configuracao::ini();
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta name="description" content="<?= $configuracao::get("description", "project") ?>"/>
+	<meta name="author" content="Luiz Joaquim Aderaldo Amichi"/>
 
 	<title><?= $configuracao::get("system_name", "project") ?></title>
 	<base href="<?= $configuracao::get("base_url", "project") ?>"/>

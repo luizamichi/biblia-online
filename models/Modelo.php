@@ -11,21 +11,23 @@ abstract class Modelo {
 	 */
 	protected array $variaveis;
 
+
 	/**
-	 * @param Modelo $modelo
+	 * @param ?self $modelo
 	 * @return void
 	 */
-	public function __construct(self $modelo=null) {
+	public function __construct(?self $modelo=null) {
 		$reflexao = new ReflectionClass(get_class($modelo));
 		$this->variaveis = $reflexao->getProperties(ReflectionProperty::IS_PRIVATE);
 	}
 
 
 	/**
-	 * @return array
+	 * @return array<string,mixed>
 	 */
 	public function json(): array {
 		$retorno = [];
+
 		foreach($this->variaveis as $variavel) {
 			if(is_object($this->{$variavel->name})) {
 				$retorno[$variavel->name] = $this->{$variavel->name}->json();
@@ -44,6 +46,7 @@ abstract class Modelo {
 				$retorno[$variavel->name] = $this->{$variavel->name};
 			}
 		}
+
 		return $retorno;
 	}
 }

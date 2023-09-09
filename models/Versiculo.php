@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../autoload.php");
+require_once __DIR__ . "/../autoload.php";
 
 
 /**
@@ -22,21 +22,23 @@ class Versiculo extends Modelo {
 	private int $numero;
 	private string $texto;
 
+
 	/**
 	 * @var bool TABELA
 	 */
 	public const TABELA = true;
 
+
 	/**
 	 * @param int $chave
-	 * @param Versao $versao
-	 * @param Livro $livro
+	 * @param ?Versao $versao
+	 * @param ?Livro $livro
 	 * @param int $capitulo
 	 * @param int $numero
 	 * @param string $texto
 	 * @return void
 	 */
-	public function __construct(int $chave=0, Versao $versao=null, Livro $livro=null, int $capitulo=0, int $numero=0, string $texto="") {
+	public function __construct(int $chave=0, ?Versao $versao=null, ?Livro $livro=null, int $capitulo=0, int $numero=0, string $texto="") {
 		$this->chave = $chave;
 		$this->versao = $versao ?? (new Versao);
 		$this->livro = $livro ?? (new Livro);
@@ -61,7 +63,7 @@ class Versiculo extends Modelo {
 
 	/**
 	 * @param string $atributo
-	 * @return ?int|?Livro|?string|?Versao
+	 * @return array|int|Livro|null|string|Versao
 	 */
 	public function __get(string $atributo): array|int|Livro|null|string|Versao {
 		return $this->$atributo ?? null;

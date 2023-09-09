@@ -50,11 +50,11 @@ defined("VERSAO") ?: define("VERSAO", "");
 					<span>Diminuir Fonte</span>
 				</a>
 				<div class="divider fitted ui"></div>
-				<a class="item" href="javascript:void(0)" id="autenticar" style="display: <?= Operador::logged() ? "none" : "" ?>">
+				<a class="item" href="javascript:void(0)" id="autenticar" style="display: <?= Operador::logged() ? "none" : "block" ?>;">
 					<i class="alternate icon sign-in"></i>
 					<span>Entrar</span>
 				</a>
-				<a class="item" href="javascript:void(0)" id="desautenticar" style="display: <?= Operador::logged() ? "" : "none" ?>">
+				<a class="item" href="javascript:void(0)" id="desautenticar" style="display: <?= Operador::logged() ? "block" : "none" ?>;">
 					<i class="alternate icon sign-out"></i>
 					<span>Sair</span>
 				</a>
